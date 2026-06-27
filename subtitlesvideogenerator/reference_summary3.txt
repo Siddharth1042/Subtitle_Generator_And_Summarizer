@@ -1,0 +1,2 @@
+
+The lecture focuses on computational models and optimization techniques. Students learn about objective functions, constraints, and the knapsack problem. The instructor explains brute-force and greedy approaches and compares their effectiveness. The lecture highlights how computational modeling can be used to analyze and solve real-world problems.

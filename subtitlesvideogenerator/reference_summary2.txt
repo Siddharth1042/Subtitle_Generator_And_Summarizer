@@ -1,0 +1,2 @@
+
+The lecture introduces key computational thinking concepts and problem-solving strategies. It explains the role of algorithms, abstraction, and modularity in software development. Students learn how programs are organized and evaluated for correctness and efficiency. The lecture emphasizes systematic design, testing, and debugging practices.

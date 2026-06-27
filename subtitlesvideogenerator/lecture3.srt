@@ -1,0 +1,2084 @@
+1
+00:00:00,370 --> 00:00:02,890
+ The following content is provided under a Creative
+
+2
+00:00:02,890 --> 00:00:03,669
+ Commons license.
+
+3
+00:00:04,009 --> 00:00:06,589
+ Your support will help MIT OpenCourseWare
+
+4
+00:00:06,589 --> 00:00:09,929
+ continue to offer high quality educational resources for free.
+
+5
+00:00:10,130 --> 00:00:12,990
+ To make a donation or to view additional materials
+
+6
+00:00:12,990 --> 00:00:17,030
+ from hundreds of MIT courses, visit MIT OpenCourseWare
+
+7
+00:00:17,030 --> 00:00:19,530
+ at ocw.mit.edu.
+
+8
+00:00:32,219 --> 00:00:35,960
+ JOHN GUTTAGG. Welcome to 6-triple-0-2,
+
+9
+00:00:36,079 --> 00:00:38,960
+ or if you were in 600, the second half of 600.
+
+10
+00:00:38,960 --> 00:00:47,719
+ I'm John Guttag. Let me start with a few administrative things. What's the
+
+11
+00:00:47,719 --> 00:00:53,280
+ workload? There are problem sets. They'll all be programming problems much in the
+
+12
+00:00:53,280 --> 00:01:00,020
+ style of 6.0001 and the goal really twofold. The 6.0001
+
+13
+00:01:00,020 --> 00:01:06,939
+ problem sets were mostly about you learning to be a programmer. A lot of
+
+14
+00:01:06,939 --> 00:01:13,040
+ of that carries over no one learns to be a programmer in half a semester so a lot
+
+15
+00:01:13,040 --> 00:01:17,599
+ of it is to improve your skills but also there's a lot more I would say
+
+16
+00:01:19,480 --> 00:01:25,680
+ conceptual algorithmic material in six triple zero two and the problem sets are
+
+17
+00:01:25,680 --> 00:01:29,560
+ designed to help cement that as well as just to give you programming experience
+
+18
+00:01:30,700 --> 00:01:39,980
+ Finger exercises, small things. If they're taking you more than 15 minutes, let us know. They really shouldn't.
+
+19
+00:01:40,379 --> 00:01:46,159
+ And they're generally designed to help you learn a single concept, usually a programming concept.
+
+20
+00:01:47,579 --> 00:01:52,659
+ Reading assignments in the textbooks. I've already posted the first reading assignment.
+
+21
+00:01:52,659 --> 00:02:02,099
+ and essentially they should provide you a very different take on the same material covering in lectures and recitations.
+
+22
+00:02:03,019 --> 00:02:07,760
+ We've tried to choose different examples for lectures and from the textbooks for the most part,
+
+23
+00:02:07,920 --> 00:02:11,060
+ so you get to see things in two slightly different ways.
+
+24
+00:02:11,680 --> 00:02:14,900
+ There will be a final exam based upon all of the above.
+
+25
+00:02:14,900 --> 00:02:15,099
+ of.
+
+26
+00:02:15,840 --> 00:02:18,120
+ All right, prerequisites, experience
+
+27
+00:02:18,120 --> 00:02:21,259
+ writing object-oriented programs in Python,
+
+28
+00:02:22,080 --> 00:02:24,199
+ preferably Python 3.5.
+
+29
+00:02:27,379 --> 00:02:30,300
+ Familiarity with concepts of computational complexity.
+
+30
+00:02:30,759 --> 00:02:32,599
+ You'll see even in today's lecture,
+
+31
+00:02:32,780 --> 00:02:33,900
+ we'll be assuming that.
+
+32
+00:02:35,099 --> 00:02:37,159
+ Familiarity with some simple algorithms.
+
+33
+00:02:40,500 --> 00:02:45,460
+ If you took 6.0001 or you took the 6.0001 advanced standing
+
+34
+00:02:45,460 --> 00:02:47,500
+ handing exam, you'll be fine.
+
+35
+00:02:48,960 --> 00:02:50,539
+ Odds are you'll be fine anyway.
+
+36
+00:02:50,860 --> 00:02:53,539
+ But that's the safest way to do it.
+
+37
+00:02:54,000 --> 00:02:57,639
+ So the programming assignments are going to be a bit easier.
+
+38
+00:02:58,360 --> 00:03:01,020
+ At least that's what students have reported in the past.
+
+39
+00:03:01,379 --> 00:03:04,780
+ Because there'll be more focus on the problem to be solved
+
+40
+00:03:04,780 --> 00:03:06,099
+ than on the actual programming.
+
+41
+00:03:06,979 --> 00:03:08,740
+ The lecture content more abstract.
+
+42
+00:03:09,740 --> 00:03:13,020
+ The lectures will be, and maybe I'm speaking euphemistically,
+
+43
+00:03:13,120 --> 00:03:14,379
+ a bit faster paced.
+
+44
+00:03:14,379 --> 00:03:21,879
+ so hang on to your seats. And the course is really less about programming and more
+
+45
+00:03:21,879 --> 00:03:28,520
+ about dipping your toe into the exotic world of data science. We do want you to
+
+46
+00:03:28,520 --> 00:03:33,219
+ hone your programming skills. There'll be a few additional bits of Python. Today,
+
+47
+00:03:33,360 --> 00:03:38,900
+ for example, we'll talk about lambda abstraction. Inevitably, some comments
+
+48
+00:03:38,900 --> 00:03:43,460
+ about software engineering, how to structure your code, more emphasis in
+
+49
+00:03:43,460 --> 00:03:48,479
+ using packages. Hopefully it will go a little bit smoother than in the last problem set
+
+50
+00:03:48,479 --> 00:03:57,539
+ in 6.0001. And finally, it's the old joke about programming that somebody walks up to
+
+51
+00:03:57,539 --> 00:04:04,199
+ a taxi driver in New York City and says, I'm lost. How do I get to Carnegie Hall? The taxi
+
+52
+00:04:04,199 --> 00:04:10,680
+ driver turns to the person and says, practice, practice, practice. And that's really the
+
+53
+00:04:10,680 --> 00:04:13,800
+ The only way to learn the program is practice, practice, practice.
+
+54
+00:04:16,720 --> 00:04:21,300
+ The main topic of the course is what I think of as computational models.
+
+55
+00:04:21,939 --> 00:04:26,480
+ How do we use computation to understand the world in which we live?
+
+56
+00:04:28,199 --> 00:04:29,319
+ What is a model?
+
+57
+00:04:29,540 --> 00:04:35,480
+ To me, I think of it as an experimental device that can help us to either understand something
+
+58
+00:04:35,480 --> 00:04:41,759
+ that has happened, to sort of build a model that explains phenomena we see every day,
+
+59
+00:04:41,759 --> 00:04:47,259
+ or a model that will allow us to predict the future, something that hasn't happened.
+
+60
+00:04:48,220 --> 00:04:51,279
+ So you can think of, for example, a climate change model.
+
+61
+00:04:51,839 --> 00:04:57,180
+ We can build models that sort of explain how the climate has changed over the millennia,
+
+62
+00:04:57,199 --> 00:05:03,160
+ and then we can build probably a slightly different model that might predict what it will be like in the future.
+
+63
+00:05:03,160 --> 00:05:16,589
+ So essentially what's happening is science is moving out of the wet lab and into the computer.
+
+64
+00:05:17,709 --> 00:05:21,149
+ Increasingly, I'm sure you all see this, those of you who are science majors,
+
+65
+00:05:21,389 --> 00:05:26,850
+ an increasing reliance on computation rather than traditional experimentation.
+
+66
+00:05:28,110 --> 00:05:33,250
+ As we'll talk about, traditional experimentation is and will remain important,
+
+67
+00:05:33,250 --> 00:05:37,029
+ but now it has to really be supplemented by computation.
+
+68
+00:05:38,750 --> 00:05:40,970
+ We'll talk about three kinds of models,
+
+69
+00:05:41,290 --> 00:05:46,410
+ optimization models, statistical models, and simulation models.
+
+70
+00:05:47,629 --> 00:05:50,449
+ So let's talk first about optimization models.
+
+71
+00:05:51,930 --> 00:05:54,910
+ An optimization model is a very simple thing.
+
+72
+00:05:55,470 --> 00:05:57,610
+ We start with an objective function
+
+73
+00:05:58,470 --> 00:06:01,410
+ that's either to be maximized or minimized.
+
+74
+00:06:02,329 --> 00:06:08,490
+ For example, if I'm going from New York to Boston, I might want to find a route by car
+
+75
+00:06:08,490 --> 00:06:12,629
+ or plane or train that minimizes the total travel time.
+
+76
+00:06:13,310 --> 00:06:18,629
+ So my objective function would be the number of minutes spent in transit getting from A
+
+77
+00:06:18,629 --> 00:06:29,279
+ to B. We then often have to layer on top of that objective function a set of constraints,
+
+78
+00:06:30,579 --> 00:06:33,000
+ sometimes empty, that we have to obey.
+
+79
+00:06:33,839 --> 00:06:39,259
+ So maybe the fastest way to get from New York to Boston is to take a plane,
+
+80
+00:06:39,939 --> 00:06:43,839
+ but I only have $100 to spend, so that option is off the table.
+
+81
+00:06:44,560 --> 00:06:48,560
+ So I have a constraint there on the amount of money I can spend.
+
+82
+00:06:49,579 --> 00:06:52,839
+ Or maybe I have to be in Boston before 5 p.m.,
+
+83
+00:06:52,839 --> 00:06:57,759
+ and while the bus would get me there for $15,
+
+84
+00:06:57,759 --> 00:06:59,420
+ dollars, it won't get me there before 5.
+
+85
+00:06:59,860 --> 00:07:03,519
+ And so maybe what I'm left with is driving,
+
+86
+00:07:04,199 --> 00:07:05,060
+ something like that.
+
+87
+00:07:05,519 --> 00:07:08,819
+ So objective function, something you're either minimizing
+
+88
+00:07:08,819 --> 00:07:11,660
+ or maximizing, and a set of constraints
+
+89
+00:07:12,740 --> 00:07:14,740
+ that eliminate some solutions.
+
+90
+00:07:16,040 --> 00:07:18,680
+ And as we'll see, there's an asymmetry here.
+
+91
+00:07:18,899 --> 00:07:21,959
+ We handle these two things differently.
+
+92
+00:07:26,079 --> 00:07:28,519
+ We use these things all the time.
+
+93
+00:07:30,579 --> 00:07:37,139
+ I commute to work using Waze, which essentially is solving, not very well I believe, an optimization
+
+94
+00:07:37,139 --> 00:07:40,600
+ problem to minimize my time from home to here.
+
+95
+00:07:41,759 --> 00:07:48,879
+ When you travel, maybe you log into various advisory programs that try and optimize things
+
+96
+00:07:48,879 --> 00:07:49,560
+ for you.
+
+97
+00:07:50,899 --> 00:07:52,279
+ They're all over the place.
+
+98
+00:07:52,279 --> 00:07:58,819
+ life. Today, you really can't avoid using an optimization algorithm as you get through
+
+99
+00:07:58,819 --> 00:08:04,470
+ life. All right. Pretty abstract. Let's talk about
+
+100
+00:08:04,470 --> 00:08:11,389
+ a specific optimization problem called the knapsack problem. The first time I talked
+
+101
+00:08:11,389 --> 00:08:16,790
+ about the knapsack problem, I neglected to show a picture of a knapsack, and I was ten
+
+102
+00:08:16,790 --> 00:08:20,610
+ minutes into it before I realized most of the class had no idea what a knapsack was.
+
+103
+00:08:20,610 --> 00:08:26,689
+ was. It's what we old people used to call a backpack, and they used to look more like
+
+104
+00:08:26,689 --> 00:08:36,379
+ that than they look today. So the knapsack problem involves, usually it's told in terms
+
+105
+00:08:36,379 --> 00:08:43,220
+ of a burglar who breaks into a house and wants to steal a bunch of stuff, but has a knapsack
+
+106
+00:08:43,220 --> 00:08:49,159
+ that will only hold a finite amount of stuff that he or she wishes to steal, and so the
+
+107
+00:08:49,159 --> 00:08:52,620
+ the burglar has to solve the optimization problem
+
+108
+00:08:53,240 --> 00:08:55,620
+ of stealing the stuff with the most value
+
+109
+00:08:56,759 --> 00:08:59,940
+ while obeying the constraint that it all
+
+110
+00:08:59,940 --> 00:09:01,240
+ has to fit in the knapsack.
+
+111
+00:09:02,679 --> 00:09:05,340
+ So we have an objective function.
+
+112
+00:09:07,279 --> 00:09:09,440
+ I'll get the most for this when I fence it.
+
+113
+00:09:10,139 --> 00:09:12,740
+ And a constraint, it has to fit in my backpack.
+
+114
+00:09:13,580 --> 00:09:17,580
+ And you can guess which of these might be the most valuable
+
+115
+00:09:17,580 --> 00:09:27,960
+ items here. So here's in words, written words, what I just said orally. There's
+
+116
+00:09:27,960 --> 00:09:32,159
+ more stuff than you can carry and you have to choose which stuff to take and
+
+117
+00:09:32,159 --> 00:09:38,500
+ which to leave behind. I should point out that there are two variants of it.
+
+118
+00:09:39,519 --> 00:09:49,080
+ There's the 0-1 knapsack problem and the continuous. So the 0-1, it would be
+
+119
+00:09:49,080 --> 00:09:50,779
+ illustrated by something like this.
+
+120
+00:09:51,759 --> 00:09:56,019
+ So the 0, 1 knapsack problem means you either take the object or you don't.
+
+121
+00:09:56,860 --> 00:09:59,679
+ I take that whole gold bar or I take none of it.
+
+122
+00:10:01,139 --> 00:10:06,179
+ The continuous or so-called fractional knapsack problem says I can take pieces of it.
+
+123
+00:10:06,539 --> 00:10:12,360
+ So maybe if I've taken my gold bar and shaved it into gold dust, I then can say, well, the
+
+124
+00:10:12,360 --> 00:10:15,360
+ whole thing won't fit in, but I can fit in a half part of it.
+
+125
+00:10:15,360 --> 00:10:23,399
+ it. The continuous knapsack problem is really boring. It's easy to solve. How do you think
+
+126
+00:10:23,399 --> 00:10:33,539
+ you would solve a continuous problem? Suppose you had over here a pile of gold and a pile
+
+127
+00:10:33,539 --> 00:10:40,580
+ of silver and a pile of raisins, and you wanted to maximize your value. Well, you'd fill up
+
+128
+00:10:40,580 --> 00:10:46,600
+ your knapsack with gold until you either ran out of gold or ran out of space. If you haven't
+
+129
+00:10:46,600 --> 00:10:53,299
+ run out of space, you'll now put silver in until you run out of space. If you still haven't
+
+130
+00:10:53,299 --> 00:10:58,059
+ run out of space, well then you'll take as many raisins as you can fit in. But you can
+
+131
+00:10:58,059 --> 00:11:02,799
+ solve it with what's called a greedy algorithm, and we'll talk much more about this as we
+
+132
+00:11:02,799 --> 00:11:12,919
+ go forward, where you take the best thing first as long as you can, and then you move
+
+133
+00:11:12,919 --> 00:11:20,039
+ on to the next thing. As we'll see, the zero-one knapsack problem is much more complicated,
+
+134
+00:11:20,720 --> 00:11:24,700
+ because once you make a decision, it will affect the future decisions.
+
+135
+00:11:26,240 --> 00:11:31,259
+ All right, let's look at an example. And I should probably warn you, if you're hungry,
+
+136
+00:11:31,440 --> 00:11:37,840
+ this is not going to be a fun lecture. So here's my least favorite, because I always
+
+137
+00:11:37,840 --> 00:11:43,759
+ want to eat more than I'm supposed to eat so the point is typically knapsack
+
+138
+00:11:43,759 --> 00:11:49,379
+ problems are not physical knapsacks but some conceptual idea so let's say that
+
+139
+00:11:49,379 --> 00:11:57,399
+ I'm allowed 1,500 calories of food and these are my options I have to go about
+
+140
+00:11:57,399 --> 00:12:02,480
+ deciding looking at this food and it's interesting again there's things showing
+
+141
+00:12:02,480 --> 00:12:04,759
+ showing up on your screen that are not showing up on my screen,
+
+142
+00:12:05,860 --> 00:12:09,100
+ but they're harmless, things like how my mouse works.
+
+143
+00:12:09,759 --> 00:12:15,620
+ At any rate, so I'm trying to take some fraction of this food,
+
+144
+00:12:16,519 --> 00:12:19,360
+ and it can't add up to more than 1,500 calories.
+
+145
+00:12:22,779 --> 00:12:28,879
+ The problem might be that once I take something that's 1,485
+
+146
+00:12:28,879 --> 00:12:33,240
+ calories, I can't take anything else, or maybe 1,200 calories,
+
+147
+00:12:33,240 --> 00:12:35,279
+ and everything else is more than 300.
+
+148
+00:12:35,899 --> 00:12:39,720
+ So once I take one thing, it constrains possible solutions.
+
+149
+00:12:40,220 --> 00:12:42,259
+ A greedy algorithm, as we'll see,
+
+150
+00:12:42,340 --> 00:12:44,539
+ is not guaranteed to give me the best answer.
+
+151
+00:12:45,600 --> 00:12:46,240
+ All right.
+
+152
+00:12:46,320 --> 00:12:48,159
+ Let's look at a formalization of it.
+
+153
+00:12:49,120 --> 00:12:51,779
+ So each item is represented by a pair,
+
+154
+00:12:53,200 --> 00:12:56,379
+ the value of the item and the weight of the item.
+
+155
+00:13:00,720 --> 00:13:04,320
+ And let's assume the knapsack can accommodate items
+
+156
+00:13:04,320 --> 00:13:07,340
+ with a total weight of no more than w.
+
+157
+00:13:09,240 --> 00:13:11,779
+ I apologize for the short variable names,
+
+158
+00:13:12,059 --> 00:13:14,440
+ but they're easier to fit on a slide.
+
+159
+00:13:15,700 --> 00:13:20,200
+ Finally, we're going to have a vector l of length n
+
+160
+00:13:21,019 --> 00:13:23,440
+ representing the set of available items.
+
+161
+00:13:24,240 --> 00:13:27,100
+ This is assuming we have n items to choose from.
+
+162
+00:13:28,899 --> 00:13:31,600
+ So each element of the vector represents an item.
+
+163
+00:13:36,700 --> 00:13:38,950
+ OK, so those are the items we have.
+
+164
+00:13:39,230 --> 00:13:42,990
+ And then another vector, v, is going
+
+165
+00:13:42,990 --> 00:13:45,549
+ to indicate whether or not an item was taken.
+
+166
+00:13:47,110 --> 00:13:49,549
+ So essentially, I'm going to use a binary number
+
+167
+00:13:49,549 --> 00:13:52,850
+ to represent the set of items I choose to take.
+
+168
+00:13:54,190 --> 00:13:59,929
+ For item 3, say, if bit 3 is 0, I'm not taking the item.
+
+169
+00:13:59,929 --> 00:14:04,389
+ If bit 3 is 1, then I am taking the item.
+
+170
+00:14:05,750 --> 00:14:10,870
+ So it just shows I can now very nicely represent what I've done
+
+171
+00:14:10,870 --> 00:14:14,690
+ by a single vector of 0s and 1s.
+
+172
+00:14:17,059 --> 00:14:18,580
+ All right, let me pause for a second.
+
+173
+00:14:19,480 --> 00:14:22,480
+ Does anyone have any questions about this setup?
+
+174
+00:14:23,039 --> 00:14:26,240
+ It's important to get the setup because what we're going to see now
+
+175
+00:14:26,240 --> 00:14:30,059
+ depends upon that setting in your head.
+
+176
+00:14:31,179 --> 00:14:35,279
+ So I've kind of used mathematics to describe the backpack
+
+177
+00:14:35,279 --> 00:14:35,720
+ problem.
+
+178
+00:14:36,120 --> 00:14:39,100
+ And that's typically the way we deal with these optimization
+
+179
+00:14:39,100 --> 00:14:39,679
+ problems.
+
+180
+00:14:40,120 --> 00:14:42,720
+ We start with some informal description,
+
+181
+00:14:43,039 --> 00:14:46,779
+ and then we translate them into a mathematical representation.
+
+182
+00:14:48,299 --> 00:14:49,500
+ So here it is.
+
+183
+00:14:50,779 --> 00:14:55,399
+ We're going to try and find a vector v that maximizes
+
+184
+00:14:55,399 --> 00:15:02,190
+ is the sum of v sub i times i sub i.
+
+185
+00:15:05,480 --> 00:15:08,340
+ Now remember, i sub i is the value of the item.
+
+186
+00:15:09,460 --> 00:15:11,820
+ v sub i is either 0 or 1.
+
+187
+00:15:13,940 --> 00:15:17,779
+ So if I didn't take the item, I'm
+
+188
+00:15:17,779 --> 00:15:19,340
+ multiplying its value by 0.
+
+189
+00:15:19,820 --> 00:15:21,899
+ So it contributes nothing to the sum.
+
+190
+00:15:22,879 --> 00:15:26,279
+ If I did take the item, I'm multiplying its value by 1.
+
+191
+00:15:26,279 --> 00:15:29,480
+ 1, so the value of the item gets added to the sum.
+
+192
+00:15:30,779 --> 00:15:33,779
+ So that tells me the value of v.
+
+193
+00:15:35,200 --> 00:15:37,779
+ And I want to get the most valuable v
+
+194
+00:15:37,779 --> 00:15:40,559
+ I can get, subject to the constraint
+
+195
+00:15:42,759 --> 00:15:45,860
+ that if I look at the items.weight
+
+196
+00:15:46,399 --> 00:15:50,039
+ and multiply it by v, the sum of the weights
+
+197
+00:15:50,039 --> 00:15:52,179
+ is no greater than w.
+
+198
+00:15:54,350 --> 00:15:57,269
+ So I'm playing the same trick with the values of multiplying
+
+199
+00:15:57,269 --> 00:16:03,659
+ multiplying each one by 0 or 1, and that's my constraint.
+
+200
+00:16:08,100 --> 00:16:08,690
+ Make sense?
+
+201
+00:16:09,169 --> 00:16:15,179
+ All right, so now we have the problem formalized.
+
+202
+00:16:16,019 --> 00:16:17,639
+ How do we solve it?
+
+203
+00:16:19,100 --> 00:16:22,820
+ Well, the most obvious solution is brute force.
+
+204
+00:16:24,509 --> 00:16:27,840
+ I enumerate all possible combinations of items
+
+205
+00:16:29,659 --> 00:16:36,980
+ that are to say I generate all subsets of the items that
+
+206
+00:16:36,980 --> 00:16:37,399
+ are available.
+
+207
+00:16:37,580 --> 00:16:39,179
+ I don't know why it says subjects here,
+
+208
+00:16:39,759 --> 00:16:41,220
+ but we should have said items.
+
+209
+00:16:41,340 --> 00:16:42,100
+ Let me fix that.
+
+210
+00:16:43,960 --> 00:16:45,600
+ This is called the power set.
+
+211
+00:16:46,879 --> 00:16:50,139
+ So the power set of a set includes the empty subset.
+
+212
+00:16:51,120 --> 00:16:53,620
+ It includes the set that includes everything
+
+213
+00:16:54,379 --> 00:16:56,919
+ and everything in between.
+
+214
+00:16:56,919 --> 00:17:02,220
+ between, so subsets of size 1, subsets of size 2, et cetera.
+
+215
+00:17:02,919 --> 00:17:05,859
+ So now I've generated all possible sets of items.
+
+216
+00:17:07,160 --> 00:17:10,299
+ I can now go through and sum up the weights
+
+217
+00:17:10,299 --> 00:17:15,000
+ and remove all those sets that weigh more than I'm allowed.
+
+218
+00:17:15,799 --> 00:17:17,619
+ And then from the remaining combinations,
+
+219
+00:17:18,299 --> 00:17:20,920
+ choose any one whose value is the largest.
+
+220
+00:17:23,089 --> 00:17:25,170
+ I say choose any one because there
+
+221
+00:17:25,170 --> 00:17:26,750
+ There could be ties, in which case, I
+
+222
+00:17:26,750 --> 00:17:27,789
+ don't care which I choose.
+
+223
+00:17:31,119 --> 00:17:34,619
+ So it's pretty obvious that this is going
+
+224
+00:17:34,619 --> 00:17:35,920
+ to give you a correct answer.
+
+225
+00:17:36,680 --> 00:17:38,500
+ You're considering all possibilities
+
+226
+00:17:39,279 --> 00:17:40,380
+ and choosing a winner.
+
+227
+00:17:43,519 --> 00:17:46,640
+ Unfortunately, it's usually not very practical.
+
+228
+00:17:46,920 --> 00:17:51,980
+ What we see here is that's what the power set is
+
+229
+00:17:51,980 --> 00:17:52,900
+ if you have 100 VEC.
+
+230
+00:17:53,960 --> 00:17:55,759
+ Not very practical, right?
+
+231
+00:17:55,759 --> 00:18:01,519
+ right? Even for a fast computer, generating that many possibilities is going to take a
+
+232
+00:18:01,519 --> 00:18:07,599
+ rather long time. So kind of disappointing. We look at it and say, well, we got a brute
+
+233
+00:18:07,599 --> 00:18:14,200
+ force algorithm. It will solve the problem, but it'll take too long. We can't actually
+
+234
+00:18:14,200 --> 00:18:19,579
+ do it. 100 is a pretty small number, right? We often end up solving optimization problems
+
+235
+00:18:19,579 --> 00:18:23,299
+ where n is something closer to 1,000, sometimes even a million.
+
+236
+00:18:24,740 --> 00:18:26,700
+ Clearly, brute force isn't going to work.
+
+237
+00:18:27,539 --> 00:18:29,640
+ So that raises the next question.
+
+238
+00:18:29,880 --> 00:18:30,960
+ Are we just being stupid?
+
+239
+00:18:32,000 --> 00:18:34,740
+ Is there a better algorithm that I should have showed you?
+
+240
+00:18:34,839 --> 00:18:35,579
+ I shouldn't say we.
+
+241
+00:18:35,680 --> 00:18:36,819
+ Am I just being stupid?
+
+242
+00:18:37,299 --> 00:18:41,059
+ Is there a better algorithm that would have given us the answer?
+
+243
+00:18:42,460 --> 00:18:45,099
+ The sad answer to that is no.
+
+244
+00:18:45,099 --> 00:18:45,279
+ No.
+
+245
+00:18:46,299 --> 00:18:50,400
+ For the knapsack problem, and indeed many optimization
+
+246
+00:18:50,400 --> 00:18:54,160
+ problems, are inherently exponential.
+
+247
+00:18:55,799 --> 00:18:59,660
+ What that means is there is no algorithm
+
+248
+00:19:00,039 --> 00:19:04,279
+ that provides an exact solution to this problem whose
+
+249
+00:19:04,279 --> 00:19:07,579
+ worst case running time is not exponential
+
+250
+00:19:07,579 --> 00:19:09,240
+ in the number of items.
+
+251
+00:19:11,650 --> 00:19:14,789
+ It is an exponentially hard problem.
+
+252
+00:19:14,789 --> 00:19:19,609
+ problem, there is no really good solution.
+
+253
+00:19:22,730 --> 00:19:25,109
+ But that should not make you sad,
+
+254
+00:19:26,349 --> 00:19:28,910
+ because while there's no perfect solution,
+
+255
+00:19:29,809 --> 00:19:32,890
+ we're going to look at a couple of really very good solutions
+
+256
+00:19:33,710 --> 00:19:36,750
+ that will make this poor woman a happier person.
+
+257
+00:19:37,710 --> 00:19:39,769
+ So let's start with the greedy algorithm.
+
+258
+00:19:40,009 --> 00:19:42,049
+ I already talked to you about greedy algorithms.
+
+259
+00:19:42,049 --> 00:19:42,150
+ items.
+
+260
+00:19:44,150 --> 00:19:46,410
+ So it could hardly be simpler.
+
+261
+00:19:47,250 --> 00:19:49,670
+ We say, while the knapsack is not full,
+
+262
+00:19:50,349 --> 00:19:52,809
+ put the best available item into the knapsack.
+
+263
+00:19:57,430 --> 00:19:58,809
+ When it's full, we're done.
+
+264
+00:20:03,190 --> 00:20:04,970
+ We do need to ask a question.
+
+265
+00:20:05,890 --> 00:20:07,009
+ What does best mean?
+
+266
+00:20:09,069 --> 00:20:12,009
+ Is the best item the most valuable?
+
+267
+00:20:13,849 --> 00:20:16,450
+ Is it the least expensive in terms of, say,
+
+268
+00:20:16,450 --> 00:20:19,509
+ the fewest calories, in my case?
+
+269
+00:20:19,960 --> 00:20:22,849
+ Or is it the highest ratio of value to units?
+
+270
+00:20:23,509 --> 00:20:26,910
+ Maybe I think a calorie in a glass of beer
+
+271
+00:20:26,910 --> 00:20:29,230
+ is worth more than a calorie in a bar of chocolate.
+
+272
+00:20:30,069 --> 00:20:35,509
+ Maybe vice versa, which gets me to a concrete example.
+
+273
+00:20:36,829 --> 00:20:39,130
+ So you're about to sit down to a meal.
+
+274
+00:20:40,069 --> 00:20:43,150
+ You know how much you value the various different foods.
+
+275
+00:20:43,150 --> 00:20:48,890
+ foods. For example, maybe you like donuts more than you like apples. You have a calorie
+
+276
+00:20:48,890 --> 00:20:53,490
+ budget, and here we're going to have a fairly austere budget. It's only one meal, it's not
+
+277
+00:20:53,490 --> 00:21:00,109
+ the whole day, of 750 calories, and we're going to have to go through menus and choose
+
+278
+00:21:00,109 --> 00:21:06,130
+ what to eat. That is, as we've seen, a knapsack problem. They should probably have a knapsack
+
+279
+00:21:06,130 --> 00:21:13,849
+ solver at every McDonald's and Burger King. So here's a menu I just made up of
+
+280
+00:21:14,809 --> 00:21:23,150
+ wine, beer, pizza, burger, fries, coke, apples, and a donut. And the value I might
+
+281
+00:21:23,150 --> 00:21:27,970
+ place on each of these and the number of calories that actually are in each of
+
+282
+00:21:27,970 --> 00:21:37,200
+ these. And we're going to build a program that will find an optimal menu. And if
+
+283
+00:21:37,200 --> 00:21:39,880
+ If you don't like this menu, you can run the program
+
+284
+00:21:39,880 --> 00:21:42,099
+ and change the values to be whatever you like.
+
+285
+00:21:46,519 --> 00:21:49,599
+ Well, as you saw, if you took 6.0001,
+
+286
+00:21:49,720 --> 00:21:53,220
+ we like to start with an abstract data type,
+
+287
+00:21:53,380 --> 00:21:56,660
+ like to organize our program around data abstractions.
+
+288
+00:21:57,039 --> 00:21:58,819
+ So I've got this class food.
+
+289
+00:22:00,039 --> 00:22:01,740
+ I can initialize things.
+
+290
+00:22:02,380 --> 00:22:06,819
+ I have a get value, a get cost, density,
+
+291
+00:22:06,819 --> 00:22:12,559
+ density, which is going to be the value divided by the cost, and then a string representation.
+
+292
+00:22:14,640 --> 00:22:19,259
+ So nothing here that you should not all be very familiar with.
+
+293
+00:22:22,490 --> 00:22:29,390
+ Then I'm going to have a function called build menu, which will take in a list of names and
+
+294
+00:22:29,390 --> 00:22:35,390
+ a list of values of equal length, and a list of calories that are all the same length,
+
+295
+00:22:36,029 --> 00:22:37,470
+ and it will build the menu.
+
+296
+00:22:37,470 --> 00:22:37,630
+ menu.
+
+297
+00:22:40,759 --> 00:22:45,619
+ So it's going to be a menu of tuples, a menu of foods,
+
+298
+00:22:45,740 --> 00:22:45,960
+ rather.
+
+299
+00:22:46,579 --> 00:22:48,759
+ And I build each food by giving it
+
+300
+00:22:48,759 --> 00:22:51,460
+ its name, its value, and its caloric content.
+
+301
+00:22:52,880 --> 00:22:53,779
+ Now I have a menu.
+
+302
+00:22:56,980 --> 00:22:58,240
+ Now comes the fun part.
+
+303
+00:22:59,319 --> 00:23:01,740
+ Here is an implementation of a greedy algorithm.
+
+304
+00:23:02,539 --> 00:23:06,500
+ I called it a flexible greedy, primarily because
+
+305
+00:23:06,500 --> 00:23:08,220
+ of this key function over here.
+
+306
+00:23:08,220 --> 00:23:08,259
+ here.
+
+307
+00:23:10,349 --> 00:23:15,250
+ So you'll notice in red, there's a parameter called key function.
+
+308
+00:23:18,059 --> 00:23:22,700
+ That's going to be map the elements of items to numbers.
+
+309
+00:23:26,099 --> 00:23:31,279
+ So it will be used to sort the items.
+
+310
+00:23:33,000 --> 00:23:35,480
+ So I want to sort them from best to worst.
+
+311
+00:23:36,519 --> 00:23:40,539
+ And this function will be used to tell me what I mean by best.
+
+312
+00:23:40,539 --> 00:23:40,619
+ best.
+
+313
+00:23:42,380 --> 00:23:46,920
+ So maybe key function will just return the value,
+
+314
+00:23:47,079 --> 00:23:48,559
+ or maybe it will return the weight,
+
+315
+00:23:48,720 --> 00:23:51,039
+ or maybe it will return some function of the density.
+
+316
+00:23:53,660 --> 00:23:58,119
+ But the idea here is I want to use one greedy algorithm
+
+317
+00:23:59,720 --> 00:24:02,140
+ independently of my definition of best.
+
+318
+00:24:02,980 --> 00:24:06,940
+ So I use key function to define what I mean by best.
+
+319
+00:24:11,279 --> 00:24:12,440
+ So I'm going to come in.
+
+320
+00:24:12,440 --> 00:24:14,380
+ in, I'm going to sort it from best to worst.
+
+321
+00:24:15,420 --> 00:24:21,579
+ And then for i in range len of items subcopy, I'm being good.
+
+322
+00:24:21,779 --> 00:24:22,640
+ I've copied it.
+
+323
+00:24:22,700 --> 00:24:24,660
+ That's why I use sorted rather than sort.
+
+324
+00:24:25,039 --> 00:24:27,640
+ I don't want to have a side effect in the parameter.
+
+325
+00:24:28,160 --> 00:24:31,500
+ In general, it's not good hygiene to do that.
+
+326
+00:24:33,160 --> 00:24:36,559
+ And so I'll go through it in order from best to worst.
+
+327
+00:24:36,559 --> 00:24:45,720
+ and if the value is less than the maximum cost, if putting it in would keep
+
+328
+00:24:45,720 --> 00:24:52,480
+ me under the cost or not over the cost, I put it in and I just do that until I
+
+329
+00:24:52,480 --> 00:24:59,630
+ can't put anything else in. So I might skip a few because I might get to the
+
+330
+00:24:59,630 --> 00:25:05,609
+ point where there's only a few calories left and the next best item is over that
+
+331
+00:25:05,609 --> 00:25:10,069
+ budget, but maybe further down I'll find one that is not over it and put it in.
+
+332
+00:25:11,490 --> 00:25:17,410
+ Okay, that's why I can't exit as soon as I reach, as soon as I find an item that
+
+333
+00:25:17,410 --> 00:25:26,319
+ won't fit. And then I'll just return. Does this make sense? Does anyone have any doubts
+
+334
+00:25:26,319 --> 00:25:35,079
+ about whether this algorithm actually works? I hope not, because I think it does
+
+335
+00:25:35,079 --> 00:25:35,420
+ does work.
+
+336
+00:25:37,859 --> 00:25:39,680
+ Let's ask the next question.
+
+337
+00:25:41,740 --> 00:25:44,299
+ How efficient do we think it is?
+
+338
+00:25:47,619 --> 00:25:49,640
+ What is the efficiency of this algorithm?
+
+339
+00:25:56,309 --> 00:25:59,049
+ Well, let's see where the time goes.
+
+340
+00:26:00,990 --> 00:26:02,589
+ It's the algorithm we just looked at.
+
+341
+00:26:03,769 --> 00:26:07,130
+ So I deleted the comments, so we'd have a little more room
+
+342
+00:26:07,130 --> 00:26:07,609
+ in the slide.
+
+343
+00:26:11,000 --> 00:26:12,519
+ Who wants to make a guess?
+
+344
+00:26:13,359 --> 00:26:17,940
+ By the way, this is the question, so please go answer the questions, we'll see how people
+
+345
+00:26:17,940 --> 00:26:18,160
+ do.
+
+346
+00:26:19,480 --> 00:26:21,720
+ But we can think about it as well together.
+
+347
+00:26:25,799 --> 00:26:28,140
+ Well, let's see where the time goes.
+
+348
+00:26:29,660 --> 00:26:31,799
+ The first thing is at the sort.
+
+349
+00:26:33,119 --> 00:26:41,740
+ So I'm going to sort all the items, and we heard from Professor Grimson how long the
+
+350
+00:26:41,740 --> 00:26:45,180
+ a sort takes, see who remembers.
+
+351
+00:26:46,740 --> 00:26:49,240
+ Python uses something called Tim sort,
+
+352
+00:26:49,980 --> 00:26:52,000
+ which is a variant of something called
+
+353
+00:26:52,000 --> 00:26:55,359
+ quick sort, which has the same worst case
+
+354
+00:26:55,359 --> 00:26:57,920
+ complexity as merge sort.
+
+355
+00:26:59,420 --> 00:27:09,029
+ And so we know that is n log n, where n, in this case,
+
+356
+00:27:09,150 --> 00:27:15,039
+ would be the len of items, OK?
+
+357
+00:27:15,039 --> 00:27:20,740
+ OK, so we know we have that.
+
+358
+00:27:25,380 --> 00:27:26,400
+ Then we have a loop.
+
+359
+00:27:27,079 --> 00:27:28,880
+ How many times do we go through this loop?
+
+360
+00:27:34,299 --> 00:27:41,220
+ Well, we go through the loop n times, once for each item,
+
+361
+00:27:41,700 --> 00:27:43,640
+ because we do end up looking at every item.
+
+362
+00:27:46,890 --> 00:27:48,970
+ And if we know that, what's the order?
+
+363
+00:27:48,970 --> 00:28:06,369
+ order n log n plus n, I guess, is order n log n.
+
+364
+00:28:09,980 --> 00:28:11,839
+ So it's pretty efficient.
+
+365
+00:28:14,059 --> 00:28:17,099
+ And we can do this for big numbers, like a million.
+
+366
+00:28:19,990 --> 00:28:23,029
+ Log of a million times a million is not a very big number.
+
+367
+00:28:25,680 --> 00:28:28,720
+ So it's very efficient.
+
+368
+00:28:32,250 --> 00:28:34,230
+ Here's some code that uses greedy.
+
+369
+00:28:34,230 --> 00:28:41,210
+ Greedy, takes in the items, the constraint, in this case
+
+370
+00:28:41,210 --> 00:28:44,650
+ will be the weight, and just calls
+
+371
+00:28:44,650 --> 00:28:49,650
+ Greedy with the key function and prints what we have.
+
+372
+00:28:55,599 --> 00:28:58,480
+ So we're going to test Greedy's.
+
+373
+00:28:58,480 --> 00:29:01,940
+ I actually think I used 750 in the code, but we can use 800.
+
+374
+00:29:02,160 --> 00:29:02,759
+ It doesn't matter.
+
+375
+00:29:03,740 --> 00:29:06,680
+ And here's something we haven't seen before.
+
+376
+00:29:06,680 --> 00:29:06,759
+ for.
+
+377
+00:29:08,190 --> 00:29:10,640
+ So use greedy by value to allocate,
+
+378
+00:29:10,859 --> 00:29:13,160
+ and it calls test greedy with food, max units,
+
+379
+00:29:13,299 --> 00:29:14,680
+ and food.getValue.
+
+380
+00:29:15,160 --> 00:29:16,880
+ Notice it's passing the function.
+
+381
+00:29:17,059 --> 00:29:20,099
+ That's why it's not no closed parentheses after it.
+
+382
+00:29:21,390 --> 00:29:23,279
+ Use greedy to allocate it.
+
+383
+00:29:24,640 --> 00:29:26,539
+ And then we have something pretty interesting.
+
+384
+00:29:29,490 --> 00:29:31,730
+ What's going on with this lambda?
+
+385
+00:29:35,210 --> 00:29:40,230
+ So here, we're going to be using greedy by density to allocate.
+
+386
+00:29:40,230 --> 00:29:40,450
+ Kate.
+
+387
+00:29:40,849 --> 00:29:42,970
+ Actually, sorry, this is greedy by cost.
+
+388
+00:29:44,109 --> 00:29:45,730
+ And you'll notice what we're doing
+
+389
+00:29:45,730 --> 00:29:50,269
+ is we don't want to pass in the cost, right?
+
+390
+00:29:51,670 --> 00:29:55,769
+ Because we really want the opposite of the cost, right?
+
+391
+00:29:55,849 --> 00:29:59,269
+ We want to reverse the sort, because we
+
+392
+00:29:59,269 --> 00:30:02,970
+ want the cheaper items to get chosen first, the ones that
+
+393
+00:30:02,970 --> 00:30:05,690
+ have fewer calories, not the ones that have more calories.
+
+394
+00:30:05,690 --> 00:30:12,470
+ calories. As it happens, when I defined cost, I defined it in the obvious way, the total
+
+395
+00:30:12,470 --> 00:30:20,130
+ number of calories. So I could have gone and written another function to do it, but since
+
+396
+00:30:20,130 --> 00:30:26,630
+ it was so simple, I decided to do it in line. So let's talk about lambda and then come back
+
+397
+00:30:26,630 --> 00:30:34,369
+ to it. Lambda is used to create an anonymous function. Anonymous in the sense that it has
+
+398
+00:30:34,369 --> 00:30:42,549
+ no name. So you start with the keyword lambda, you then give it a sequence of
+
+399
+00:30:42,549 --> 00:30:53,099
+ identifiers, and then some expression. What lambda does is it builds a function
+
+400
+00:30:53,099 --> 00:31:01,920
+ that evaluates that expression on those parameters and returns the result of
+
+401
+00:31:01,920 --> 00:31:02,900
+ of evaluating the expression.
+
+402
+00:31:04,859 --> 00:31:09,160
+ So instead of writing def, I have
+
+403
+00:31:09,160 --> 00:31:10,660
+ inline defined a function.
+
+404
+00:31:11,440 --> 00:31:16,019
+ So if we go back to it here, you can
+
+405
+00:31:16,019 --> 00:31:19,859
+ see that what I've done is lambda x 1 divided
+
+406
+00:31:19,859 --> 00:31:24,279
+ by food.getcost of x.
+
+407
+00:31:29,049 --> 00:31:31,269
+ Notice food is the class name here.
+
+408
+00:31:31,269 --> 00:31:31,390
+ here.
+
+409
+00:31:32,869 --> 00:31:36,829
+ So I'm taking the function get cost from the class food,
+
+410
+00:31:38,029 --> 00:31:45,200
+ and I'm passing it the parameter x, which is going to be what?
+
+411
+00:31:46,000 --> 00:31:47,779
+ What's the type of x going to be?
+
+412
+00:31:55,700 --> 00:31:57,039
+ I can wait you out.
+
+413
+00:31:58,759 --> 00:32:02,200
+ What does the type of x have to be for this lambda expression
+
+414
+00:32:02,200 --> 00:32:02,980
+ to make sense?
+
+415
+00:32:09,990 --> 00:32:12,329
+ Well, go back to the class food.
+
+416
+00:32:12,329 --> 00:32:16,190
+ food, what's the type of the argument of get cost?
+
+417
+00:32:21,559 --> 00:32:24,119
+ What's the name of the argument to get cost?
+
+418
+00:32:24,319 --> 00:32:25,279
+ That's an easier question.
+
+419
+00:32:30,869 --> 00:32:32,529
+ We'll go back and we'll look at it.
+
+420
+00:32:40,599 --> 00:32:42,980
+ What's the type of the argument to get cost?
+
+421
+00:32:48,029 --> 00:32:49,049
+ Food, thank you.
+
+422
+00:32:50,430 --> 00:32:54,930
+ So I do have, speaking of food, we
+
+423
+00:32:54,930 --> 00:32:56,450
+ do have a tradition in this class
+
+424
+00:32:57,369 --> 00:32:59,910
+ that people who answer questions correctly
+
+425
+00:32:59,910 --> 00:33:01,269
+ directly get rewarded with food.
+
+426
+00:33:03,750 --> 00:33:07,579
+ Oh, Napoli would have caught that.
+
+427
+00:33:11,599 --> 00:33:14,160
+ All right, so it has to be of type food, right?
+
+428
+00:33:14,819 --> 00:33:18,180
+ Because itself in the class food.
+
+429
+00:33:27,619 --> 00:33:34,920
+ So if we go back to here, this x has to be of type food, right?
+
+430
+00:33:40,000 --> 00:33:44,480
+ And sure enough, when we use it, it will be.
+
+431
+00:33:44,579 --> 00:33:45,519
+ Let's now use it.
+
+432
+00:33:45,519 --> 00:33:57,690
+ it. I should point out that lambda can be really handy, as it is here. And it's possible
+
+433
+00:33:57,690 --> 00:34:03,349
+ to write amazing, beautiful, complicated lambda expressions. And back in the good old days
+
+434
+00:34:03,349 --> 00:34:13,070
+ of 6.001, people learned to do that. And then they learned that they shouldn't. My view
+
+435
+00:34:13,070 --> 00:34:17,710
+ on lambda expressions is if I can't fit it in a single line, I just go write def and
+
+436
+00:34:17,710 --> 00:34:20,869
+ and write a function definition because it's easier to debug.
+
+437
+00:34:22,150 --> 00:34:24,769
+ But for one-liners, lambda is great.
+
+438
+00:34:26,880 --> 00:34:29,840
+ All right, let's look at using greedy.
+
+439
+00:34:30,639 --> 00:34:32,800
+ So here's this function testGreedy.
+
+440
+00:34:34,079 --> 00:34:36,500
+ Takes foods in the maximum number of units.
+
+441
+00:34:39,170 --> 00:34:42,309
+ And it's going to go through, and it's
+
+442
+00:34:42,309 --> 00:34:44,909
+ going to test all three greedy algorithms.
+
+443
+00:34:48,210 --> 00:34:51,269
+ And we just saw that, and then here is the call of it.
+
+444
+00:34:51,269 --> 00:34:55,449
+ And so I picked up some names and the values.
+
+445
+00:34:55,610 --> 00:34:57,150
+ This is just the menu we saw.
+
+446
+00:34:57,730 --> 00:34:59,570
+ I'm going to build the menus, and I'm
+
+447
+00:34:59,570 --> 00:35:01,409
+ going to call testGreedies.
+
+448
+00:35:02,409 --> 00:35:06,130
+ So let's go look at the code that does this.
+
+449
+00:35:10,429 --> 00:35:11,949
+ So here you have it.
+
+450
+00:35:12,610 --> 00:35:15,650
+ Or maybe you don't, because every time I switch
+
+451
+00:35:15,650 --> 00:35:20,309
+ applications, Windows decides I don't want to show you
+
+452
+00:35:20,309 --> 00:35:21,010
+ the screen anyway.
+
+453
+00:35:27,280 --> 00:35:28,960
+ This really shouldn't be necessary.
+
+454
+00:35:28,960 --> 00:35:40,320
+ necessary. Keep changes. Why it keeps forgetting, I don't know. Anyway, so here's the code.
+
+455
+00:35:40,880 --> 00:35:51,699
+ It's all the code we just looked at. Now let's run it. Well, what we see here is that we
+
+456
+00:35:51,699 --> 00:35:57,840
+ use greedy by value to allocate 750 calories, and it chooses the burger, the pizza, and
+
+457
+00:35:57,840 --> 00:36:04,440
+ and the wine for a total of a value of 284 happiness points,
+
+458
+00:36:04,619 --> 00:36:05,059
+ if you will.
+
+459
+00:36:06,559 --> 00:36:09,199
+ On the other hand, if we use greedy by cost,
+
+460
+00:36:09,860 --> 00:36:15,380
+ I get 318 happiness points and a different menu.
+
+461
+00:36:15,940 --> 00:36:18,500
+ The apple, the wine, the cola, the beer, and the donut.
+
+462
+00:36:18,880 --> 00:36:21,300
+ I've lost the pizza and the burger.
+
+463
+00:36:24,539 --> 00:36:27,500
+ I guess this is what I signed up for when
+
+464
+00:36:27,500 --> 00:36:28,639
+ I put my preferences on.
+
+465
+00:36:31,340 --> 00:36:33,900
+ Oh, and here's another solution with 318.
+
+466
+00:36:38,619 --> 00:36:42,980
+ Apple, wine, oh, yeah, all right.
+
+467
+00:36:44,139 --> 00:36:46,280
+ So I actually got the same solution,
+
+468
+00:36:46,800 --> 00:36:49,179
+ but it just found them in a different order, right?
+
+469
+00:36:49,739 --> 00:36:51,260
+ Why did it find them in a different order?
+
+470
+00:36:51,260 --> 00:36:53,179
+ order, because the sort order was different,
+
+471
+00:36:54,019 --> 00:36:56,900
+ because in this case, I was sorting by density.
+
+472
+00:36:59,219 --> 00:37:02,659
+ So from this, we see an important point
+
+473
+00:37:03,019 --> 00:37:07,480
+ about greedy algorithms, that we used the algorithm,
+
+474
+00:37:08,360 --> 00:37:10,119
+ and we got different answers.
+
+475
+00:37:12,599 --> 00:37:14,460
+ Why do we have different answers?
+
+476
+00:37:17,809 --> 00:37:19,909
+ The problem is that a greedy algorithm
+
+477
+00:37:19,909 --> 00:37:24,190
+ makes a sequence of local optimizations,
+
+478
+00:37:24,469 --> 00:37:28,409
+ chooses the locally optimal answer at every point.
+
+479
+00:37:28,690 --> 00:37:32,989
+ And that doesn't necessarily add up to a globally optimal answer.
+
+480
+00:37:33,789 --> 00:37:39,469
+ This is often illustrated by showing an example of, say, hill climbing.
+
+481
+00:37:40,010 --> 00:37:45,670
+ So imagine you're in a terrain that looks something like this.
+
+482
+00:37:46,889 --> 00:37:50,909
+ and you want to get to the highest point you can get.
+
+483
+00:37:51,989 --> 00:37:54,909
+ So you might choose as a greedy algorithm,
+
+484
+00:37:55,949 --> 00:37:57,750
+ if you can go up, go up.
+
+485
+00:37:59,900 --> 00:38:02,760
+ If you can't go up, you stop, right?
+
+486
+00:38:03,079 --> 00:38:05,480
+ So whenever you get a choice, you go up.
+
+487
+00:38:06,159 --> 00:38:13,869
+ And so if I start here, I could, right in the middle,
+
+488
+00:38:14,530 --> 00:38:18,170
+ maybe say, all right, it's not up, but it's not down either.
+
+489
+00:38:18,170 --> 00:38:26,059
+ so I'll go either left or right and let's say I go right so I come to here
+
+490
+00:38:26,059 --> 00:38:31,619
+ and then I'll just make my way up to the top of the hill making a locally optimal
+
+491
+00:38:31,619 --> 00:38:37,260
+ decision head up at each point and I'll get here and I'll say well now any place
+
+492
+00:38:37,260 --> 00:38:43,300
+ I go takes me to a lower point so I don't want to do it right because the
+
+493
+00:38:43,300 --> 00:38:49,820
+ greedy algorithm says never go backwards so I'm here and I'm happy on the other
+
+494
+00:38:49,820 --> 00:38:55,500
+ On the other hand, if I had gone here for my first step,
+
+495
+00:38:56,119 --> 00:38:59,400
+ then my next step up would take me up, up, up.
+
+496
+00:38:59,579 --> 00:39:00,420
+ I'd get to here.
+
+497
+00:39:01,539 --> 00:39:07,940
+ And I'd stop and say, OK, no way to go but down.
+
+498
+00:39:08,099 --> 00:39:09,059
+ I don't want to go down.
+
+499
+00:39:09,139 --> 00:39:09,500
+ I'm done.
+
+500
+00:39:10,000 --> 00:39:13,840
+ And what I would find is I'm at a local maximum rather
+
+501
+00:39:13,840 --> 00:39:14,980
+ than a global maximum.
+
+502
+00:39:17,329 --> 00:39:19,769
+ And that's the problem with greedy algorithms,
+
+503
+00:39:19,769 --> 00:39:25,010
+ that you can get stuck at a local optimal point
+
+504
+00:39:26,250 --> 00:39:29,110
+ and not get to the best one.
+
+505
+00:39:30,389 --> 00:39:32,429
+ Now, we could ask the question,
+
+506
+00:39:35,969 --> 00:39:38,329
+ can I just say, don't worry about it.
+
+507
+00:39:38,409 --> 00:39:40,809
+ Density, say, will always get me the best answer.
+
+508
+00:39:43,570 --> 00:39:45,230
+ I've tried a different experiment.
+
+509
+00:39:45,349 --> 00:39:46,909
+ Let's say I'm feeling expansive
+
+510
+00:39:46,909 --> 00:39:49,230
+ and I'm going to allow myself 1,000 calories.
+
+511
+00:39:49,230 --> 00:40:10,769
+ stories. Well, here what we see is the winner will be greedy by value. Happens to find a
+
+512
+00:40:10,769 --> 00:40:20,429
+ better answer, 424 instead of 413. So there is no way to know in advance. Sometimes this
+
+513
+00:40:20,429 --> 00:40:26,650
+ definition of best might work. Sometimes that might work. Sometimes no definition of best
+
+514
+00:40:26,650 --> 00:40:30,869
+ best will work, and you can't get to a good solution.
+
+515
+00:40:31,030 --> 00:40:32,670
+ Or you can get to a good solution,
+
+516
+00:40:32,809 --> 00:40:34,849
+ you can't get to an optimal solution
+
+517
+00:40:34,849 --> 00:40:35,829
+ with the greedy algorithm.
+
+518
+00:40:36,909 --> 00:40:40,690
+ On Wednesday, we'll talk about how do you actually
+
+519
+00:40:40,690 --> 00:40:44,670
+ guarantee finding an optimal solution in a better way
+
+520
+00:40:44,670 --> 00:40:45,409
+ than brute force.
+
+521
+00:40:46,329 --> 00:40:47,070
+ See you then.
+

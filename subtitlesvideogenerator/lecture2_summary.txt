@@ -1,0 +1,5 @@
+BART SUMMARY:
+Signals, at least as an informal definition, are functions of one or more independent variables. Systems, in our setting, would typically be used to process  signals. A speech signal is an example of a continuous time  one-dimensional signal.
+
+FLAN SUMMARY:
+Now, let's take a look at a speech signal. Let's take a look at a speech signal. Let's take a look at a speech signal. Let's take a look at a speech signal. Let's take a look at a speech signal. Let's take a look at a speech signal. Let's take a look at a speech signal. Let's take a look at a speech signal. Let's take a look at a speech signal. Let

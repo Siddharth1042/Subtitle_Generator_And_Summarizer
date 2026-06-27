@@ -1,0 +1,2 @@
+
+The lecture introduces the course objectives, structure, and teaching methodology. It emphasizes abstraction, modularity, and engineering reasoning as key concepts. Students learn about Python fundamentals including functions, lists, classes, and variable binding. The course uses a practice-oriented approach through lectures, labs, and projects. The goal is to build skills for designing and understanding complex systems.

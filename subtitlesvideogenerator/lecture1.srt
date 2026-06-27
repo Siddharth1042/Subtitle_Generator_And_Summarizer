@@ -1,0 +1,4792 @@
+1
+00:00:00,180 --> 00:00:02,779
+ The following content is provided under a Creative
+
+2
+00:00:02,779 --> 00:00:03,540
+ Commons license.
+
+3
+00:00:03,859 --> 00:00:06,679
+ Your support will help MIT OpenCourseWare
+
+4
+00:00:06,679 --> 00:00:10,160
+ continue to offer high quality educational resources for free.
+
+5
+00:00:10,460 --> 00:00:13,580
+ To make a donation or view additional materials
+
+6
+00:00:13,580 --> 00:00:17,260
+ from hundreds of MIT courses, visit MIT OpenCourseWare
+
+7
+00:00:17,480 --> 00:00:20,160
+ at ocw.mit.edu.
+
+8
+00:00:28,079 --> 00:00:29,980
+ Hello, and welcome to 6.01.
+
+9
+00:00:31,420 --> 00:00:32,200
+ I'm Danny Freeman.
+
+10
+00:00:32,340 --> 00:00:32,799
+ I'm the lecturer.
+
+11
+00:00:33,539 --> 00:00:35,259
+ One thing you should know about today
+
+12
+00:00:35,259 --> 00:00:37,280
+ is that there's a single handout you should
+
+13
+00:00:37,280 --> 00:00:38,679
+ should have picked it up on your way in.
+
+14
+00:00:38,759 --> 00:00:40,219
+ It's available at either of the two doors.
+
+15
+00:00:42,740 --> 00:00:47,399
+ What I want to do today in this first lecture is mostly
+
+16
+00:00:47,399 --> 00:00:48,460
+ focus on content.
+
+17
+00:00:50,399 --> 00:00:53,939
+ But before I do that, since 6.01 is a little bit of an
+
+18
+00:00:53,939 --> 00:00:56,219
+ unusual course, I want to give you a little bit of an
+
+19
+00:00:56,219 --> 00:00:58,219
+ overview and tell you a little bit about the
+
+20
+00:00:58,219 --> 00:00:59,299
+ administration of the course.
+
+21
+00:01:02,780 --> 00:01:09,510
+ 6.01 is mostly about modes of reasoning.
+
+22
+00:01:09,510 --> 00:01:09,629
+ name.
+
+23
+00:01:11,090 --> 00:01:14,290
+ What we would like you to get out of this course is ways to
+
+24
+00:01:14,290 --> 00:01:15,349
+ think about engineering.
+
+25
+00:01:17,489 --> 00:01:21,189
+ We want to talk about how do you design, how do you build,
+
+26
+00:01:21,269 --> 00:01:24,549
+ how do you construct, how do you debug complicated systems?
+
+27
+00:01:25,810 --> 00:01:27,129
+ That's what engineers do.
+
+28
+00:01:28,310 --> 00:01:29,790
+ And we're very good at it.
+
+29
+00:01:30,290 --> 00:01:32,290
+ And we want to make you very good at it.
+
+30
+00:01:33,469 --> 00:01:36,090
+ We're very good at it, and you know that from your common
+
+31
+00:01:36,090 --> 00:01:37,109
+ everyday experience.
+
+32
+00:01:37,109 --> 00:01:38,909
+ experience, laptops are incredible.
+
+33
+00:01:40,569 --> 00:01:43,810
+ As we go through the course, you're going to see that
+
+34
+00:01:43,810 --> 00:01:47,049
+ laptops incorporate things from the tiniest, tiniest
+
+35
+00:01:47,049 --> 00:01:51,450
+ level, things so small that you can't see them.
+
+36
+00:01:51,510 --> 00:01:52,010
+ They're microscopic.
+
+37
+00:01:52,290 --> 00:01:54,670
+ The individual transistors are not things that you can see.
+
+38
+00:01:55,109 --> 00:01:58,069
+ We developed special tools for you even to be able to
+
+39
+00:01:58,069 --> 00:01:58,890
+ visualize them.
+
+40
+00:02:00,069 --> 00:02:04,189
+ And yet, we conglomerate billions of them into a system
+
+41
+00:02:04,189 --> 00:02:06,209
+ that works relatively reliable.
+
+42
+00:02:06,209 --> 00:02:10,310
+ Now, I realize I'm going out on a limb, because when you say things like that, then things
+
+43
+00:02:10,310 --> 00:02:10,770
+ always fail.
+
+44
+00:02:10,889 --> 00:02:16,750
+ But I'll go out on a limb and say, for the most part, the systems that we construct are
+
+45
+00:02:16,750 --> 00:02:17,650
+ very reliable.
+
+46
+00:02:19,009 --> 00:02:24,509
+ We'd like you to know how you think about making such a complicated system and making
+
+47
+00:02:24,509 --> 00:02:25,110
+ it reliable.
+
+48
+00:02:26,349 --> 00:02:28,550
+ We want to tell you about how you would model things.
+
+49
+00:02:29,389 --> 00:02:30,550
+ How do you gain insight?
+
+50
+00:02:30,710 --> 00:02:32,189
+ How do you get predictability?
+
+51
+00:02:32,189 --> 00:02:36,550
+ How do you figure out how something will work before you've built it?
+
+52
+00:02:38,409 --> 00:02:43,710
+ If you're limited to try out how things work by actually constructing it,
+
+53
+00:02:43,870 --> 00:02:47,129
+ you spend a lot of time constructing things that never make it.
+
+54
+00:02:47,949 --> 00:02:54,310
+ We want to avoid that by, where we can, making a model, analyzing the model,
+
+55
+00:02:54,389 --> 00:02:55,889
+ making a prediction from the model,
+
+56
+00:02:56,009 --> 00:03:01,110
+ and using that prediction to build a better system on the first try.
+
+57
+00:03:03,919 --> 00:03:07,539
+ We want to tell you about how to augment the physical
+
+58
+00:03:07,539 --> 00:03:10,500
+ behavior of a system by putting computation in it.
+
+59
+00:03:11,539 --> 00:03:15,199
+ That's a very powerful technique that is increasingly
+
+60
+00:03:15,199 --> 00:03:18,560
+ common in anything from a microwave to a refrigerator.
+
+61
+00:03:19,680 --> 00:03:21,759
+ We'd like you to know the principles by
+
+62
+00:03:21,759 --> 00:03:22,500
+ which you do that.
+
+63
+00:03:23,759 --> 00:03:26,460
+ And we'd like you to be able to build systems that are
+
+64
+00:03:26,460 --> 00:03:27,560
+ robust to failure.
+
+65
+00:03:29,020 --> 00:03:30,520
+ That's a newer idea.
+
+66
+00:03:30,520 --> 00:03:37,159
+ idea. It's something that people are very good at. If we try to do something and we
+
+67
+00:03:37,159 --> 00:03:43,699
+ make a mistake, we know how to fix it, and often the fix works. We're less good at doing
+
+68
+00:03:43,699 --> 00:03:48,759
+ that in constructing artificial systems, in engineering systems, and we'd like to talk
+
+69
+00:03:48,759 --> 00:03:55,120
+ about principles by which we can do that. So the goal of 601 is then really to convey
+
+70
+00:03:55,120 --> 00:04:00,319
+ they a distinct perspective about how we engineer systems.
+
+71
+00:04:01,860 --> 00:04:05,620
+ Now having said that, this is not a philosophy course.
+
+72
+00:04:06,960 --> 00:04:10,680
+ We are not going to make lists of things to do if you want it
+
+73
+00:04:10,680 --> 00:04:11,180
+ to be robust.
+
+74
+00:04:13,000 --> 00:04:15,139
+ We're going to learn to do things by
+
+75
+00:04:15,139 --> 00:04:16,839
+ actually making systems.
+
+76
+00:04:17,180 --> 00:04:19,839
+ This is an introductory engineering course, and so
+
+77
+00:04:19,839 --> 00:04:20,660
+ you're going to build things.
+
+78
+00:04:21,819 --> 00:04:24,879
+ The idea is going to be that in constructing those things,
+
+79
+00:04:24,879 --> 00:04:28,079
+ We've rigged the exercises so that some of those important
+
+80
+00:04:28,079 --> 00:04:29,800
+ themes become transparent.
+
+81
+00:04:30,939 --> 00:04:34,759
+ So the idea is this is introductory engineering.
+
+82
+00:04:35,100 --> 00:04:36,160
+ You all make things.
+
+83
+00:04:36,480 --> 00:04:38,240
+ You all get things to work.
+
+84
+00:04:38,480 --> 00:04:41,600
+ And in the process of doing that, learn something about
+
+85
+00:04:41,600 --> 00:04:45,420
+ the bigger view of how quality engineering happens.
+
+86
+00:04:47,240 --> 00:04:51,100
+ So despite the fact that we're really about modes of
+
+87
+00:04:51,100 --> 00:04:54,339
+ of reasoning that will be grounded in content.
+
+88
+00:04:55,399 --> 00:04:59,779
+ We selected the content very broadly from across EECS.
+
+89
+00:04:59,839 --> 00:05:01,459
+ EECS is an enormous endeavor.
+
+90
+00:05:03,850 --> 00:05:06,250
+ We can't possibly introduce everything about
+
+91
+00:05:06,250 --> 00:05:08,069
+ EECS in one subject.
+
+92
+00:05:08,250 --> 00:05:08,790
+ That's ridiculous.
+
+93
+00:05:11,100 --> 00:05:13,259
+ However, we wanted to give you a variety.
+
+94
+00:05:13,579 --> 00:05:16,240
+ We wanted to give you a sense of the variety of tasks that
+
+95
+00:05:16,240 --> 00:05:20,839
+ you can use, that you can apply the same techniques to.
+
+96
+00:05:21,040 --> 00:05:23,680
+ So we want to introduce modes of reasoning and then show you
+
+97
+00:05:23,680 --> 00:05:28,579
+ explicitly how you can use those modes of reasoning in a variety of contexts.
+
+98
+00:05:29,199 --> 00:05:32,620
+ So we've chosen four and we've organized the course around four modules.
+
+99
+00:05:33,259 --> 00:05:37,240
+ First module is software engineering, then signals and systems, then circuits, then probability
+
+100
+00:05:37,240 --> 00:05:37,800
+ and planning.
+
+101
+00:05:39,379 --> 00:05:44,240
+ Even so, even having chosen just four out of the vast number of things we could have
+
+102
+00:05:44,240 --> 00:05:49,519
+ chosen, there's no way we can tell you adequately, we can't give you an adequate introduction
+
+103
+00:05:49,519 --> 00:05:50,879
+ to any of those things either.
+
+104
+00:05:52,459 --> 00:05:57,019
+ What we've chosen to do instead is focus on key
+
+105
+00:05:57,019 --> 00:05:59,959
+ concepts represented by the asterisks.
+
+106
+00:06:01,439 --> 00:06:05,860
+ The idea is going to be we choose one or two things and
+
+107
+00:06:05,860 --> 00:06:08,860
+ really focus on those deeply so you get a thorough
+
+108
+00:06:08,860 --> 00:06:13,519
+ understanding, not only of how that fits within, for example,
+
+109
+00:06:13,660 --> 00:06:17,259
+ the context of software engineering, but also how that
+
+110
+00:06:17,259 --> 00:06:19,959
+ concept ramifies into other areas.
+
+111
+00:06:19,959 --> 00:06:23,600
+ Notice that I tried to choose the stars so they hit
+
+112
+00:06:23,600 --> 00:06:24,600
+ multiple circles.
+
+113
+00:06:25,579 --> 00:06:27,000
+ That's what we're trying to do.
+
+114
+00:06:27,060 --> 00:06:29,959
+ We're trying to not only introduce an idea to you, but
+
+115
+00:06:29,959 --> 00:06:33,620
+ also show you how it connects to other ideas.
+
+116
+00:06:35,779 --> 00:06:40,759
+ So the idea, then, is to focus on a few, we hope, very well
+
+117
+00:06:40,759 --> 00:06:45,139
+ chosen applications that will demonstrate a variety of
+
+118
+00:06:45,139 --> 00:06:45,860
+ powerful techniques.
+
+119
+00:06:45,860 --> 00:06:45,959
+ techniques.
+
+120
+00:06:48,079 --> 00:06:57,379
+ Our mantra, the way we intend to go about teaching this stuff is practice, theory, practice.
+
+121
+00:06:58,699 --> 00:07:04,759
+ There's an enormous educational literature that says, whether you like it or not, people
+
+122
+00:07:04,759 --> 00:07:06,360
+ learn better when they're doing things.
+
+123
+00:07:08,180 --> 00:07:11,439
+ You have a lot of experience with that, you have a lot of experience on the other side
+
+124
+00:07:11,439 --> 00:07:11,680
+ too.
+
+125
+00:07:13,459 --> 00:07:17,639
+ I'll try to forget the other side or at least try to wipe it from your brain momentarily,
+
+126
+00:07:18,279 --> 00:07:21,339
+ to focus on your more fundamental modes of learning.
+
+127
+00:07:22,819 --> 00:07:29,029
+ When you were a kid and you were learning your first language, you didn't learn all
+
+128
+00:07:29,029 --> 00:07:30,170
+ the rules of grammar first.
+
+129
+00:07:30,250 --> 00:07:32,250
+ You didn't learn all the letters of the alphabet first.
+
+130
+00:07:32,350 --> 00:07:35,009
+ You didn't learn about conjugating verbs first.
+
+131
+00:07:36,730 --> 00:07:38,370
+ You learned a little bit about language.
+
+132
+00:07:38,490 --> 00:07:39,509
+ You started to use it.
+
+133
+00:07:39,529 --> 00:07:40,470
+ You ran into problems.
+
+134
+00:07:40,470 --> 00:07:41,990
+ You learned a little more about language.
+
+135
+00:07:43,370 --> 00:07:50,550
+ You learned to go from words like feed me to higher level
+
+136
+00:07:50,550 --> 00:07:52,870
+ concepts like, hey, what's for dinner?
+
+137
+00:07:53,850 --> 00:07:58,230
+ So the idea is that you learned it in an iterative
+
+138
+00:07:58,230 --> 00:08:02,089
+ process where you learned some stuff, tried it out, learned
+
+139
+00:08:02,089 --> 00:08:04,509
+ some more stuff, tried it out, and it built up.
+
+140
+00:08:05,149 --> 00:08:07,990
+ There's an enormous literature in education that says that's
+
+141
+00:08:07,990 --> 00:08:09,490
+ exactly how we always learn everything.
+
+142
+00:08:10,790 --> 00:08:12,910
+ And so that's the way this course is focused.
+
+143
+00:08:13,170 --> 00:08:16,170
+ What we will do is, for example, for today, we'll
+
+144
+00:08:16,170 --> 00:08:17,649
+ learn a little bit about software engineering.
+
+145
+00:08:19,069 --> 00:08:21,769
+ Then we'll do two lab sessions where you actually try to use
+
+146
+00:08:21,769 --> 00:08:22,709
+ the things that we talk about.
+
+147
+00:08:24,790 --> 00:08:26,509
+ Then we'll come back to lecture and we'll have some
+
+148
+00:08:26,509 --> 00:08:29,629
+ more theory about how you would do programming.
+
+149
+00:08:30,430 --> 00:08:32,269
+ And then you go back to the lab and do some more stuff.
+
+150
+00:08:33,129 --> 00:08:38,909
+ And the hope is that by this tangible context, you'll have
+
+151
+00:08:38,909 --> 00:08:40,889
+ have a deeper appreciation of the ideas that
+
+152
+00:08:40,889 --> 00:08:41,549
+ we're trying to convey.
+
+153
+00:08:45,179 --> 00:08:48,340
+ So let me tell you a little bit about the four modules
+
+154
+00:08:48,340 --> 00:08:48,980
+ that we've chosen.
+
+155
+00:08:49,259 --> 00:08:51,519
+ The course is going to be organized on four modules.
+
+156
+00:08:53,220 --> 00:08:55,799
+ Each module will take about 1 fourth of the course.
+
+157
+00:08:56,139 --> 00:08:58,259
+ First thing we'll look at is software engineering.
+
+158
+00:08:59,600 --> 00:09:04,399
+ As I said, we don't have time to focus on or even survey all
+
+159
+00:09:04,399 --> 00:09:06,440
+ of the big ideas in software engineering.
+
+160
+00:09:06,600 --> 00:09:07,360
+ It's far too big.
+
+161
+00:09:07,360 --> 00:09:10,639
+ So we're going to focus narrowly on one or two things.
+
+162
+00:09:12,279 --> 00:09:16,360
+ We'd like you to know about abstraction and modularity,
+
+163
+00:09:16,460 --> 00:09:20,580
+ because that's such an important idea in the
+
+164
+00:09:20,580 --> 00:09:22,179
+ construction of big systems.
+
+165
+00:09:23,100 --> 00:09:24,799
+ So that's going to be our focus.
+
+166
+00:09:25,080 --> 00:09:29,740
+ In today's lecture, we'll begin talking about
+
+167
+00:09:31,120 --> 00:09:33,700
+ modularity and abstraction at the small scale.
+
+168
+00:09:33,700 --> 00:09:33,940
+ scale?
+
+169
+00:09:35,360 --> 00:09:39,340
+ How does it affect the things you type as instructions to a computer?
+
+170
+00:09:40,600 --> 00:09:44,120
+ But by next week, we're going to be talking about a whole bigger scale.
+
+171
+00:09:45,019 --> 00:09:52,240
+ By next week, we're going to talk about constructing software modules at a much higher level.
+
+172
+00:09:52,379 --> 00:09:55,000
+ In particular, we'll talk about something that we'll call a state machine.
+
+173
+00:09:56,120 --> 00:10:00,600
+ A state machine is a thing that works in steps.
+
+174
+00:10:02,460 --> 00:10:06,840
+ On every step, the state machine gets a new input.
+
+175
+00:10:08,080 --> 00:10:11,539
+ Then based on that input and its memory of what's come
+
+176
+00:10:11,539 --> 00:10:14,659
+ before, the state machine decides to do something.
+
+177
+00:10:14,799 --> 00:10:15,679
+ It generates an output.
+
+178
+00:10:16,019 --> 00:10:17,240
+ And then the process repeats.
+
+179
+00:10:19,919 --> 00:10:23,460
+ We will see that that kind of an abstraction, state
+
+180
+00:10:23,460 --> 00:10:26,720
+ state machines, there's a way to think about state machines
+
+181
+00:10:26,720 --> 00:10:31,980
+ that is compositional, that you can think of as a hierarchy
+
+182
+00:10:32,639 --> 00:10:36,159
+ just as you can think of low-level hierarchies within
+
+183
+00:10:36,159 --> 00:10:36,559
+ a language.
+
+184
+00:10:36,679 --> 00:10:37,799
+ I'll say a lot more about that today.
+
+185
+00:10:38,840 --> 00:10:42,179
+ So the idea will be that once you've composed a state
+
+186
+00:10:42,179 --> 00:10:45,940
+ machine, you'll be able to join two state machines and
+
+187
+00:10:45,940 --> 00:10:48,679
+ have its behavior look just like one state machine.
+
+188
+00:10:49,179 --> 00:10:52,440
+ That's a way to get a more complicated behavior by
+
+189
+00:10:52,440 --> 00:10:53,919
+ by constructing two simpler behaviors.
+
+190
+00:10:54,320 --> 00:10:55,220
+ That's what we want.
+
+191
+00:10:55,320 --> 00:10:58,559
+ We want to learn tools that lets us compose complex
+
+192
+00:10:58,559 --> 00:11:00,519
+ behaviors out of simple behaviors.
+
+193
+00:11:00,820 --> 00:11:03,179
+ And the tangible model of that will be the robot.
+
+194
+00:11:05,190 --> 00:11:09,690
+ We will see how to write a program that controls a robot
+
+195
+00:11:10,870 --> 00:11:12,549
+ as a state machine.
+
+196
+00:11:13,850 --> 00:11:16,529
+ That's certainly not the only way you could control a robot.
+
+197
+00:11:16,830 --> 00:11:19,990
+ And it's probably not the way you would first think of it if
+
+198
+00:11:19,990 --> 00:11:23,169
+ you took one course in programming and somebody said
+
+199
+00:11:23,169 --> 00:11:25,429
+ said to you, go program the robot to do something.
+
+200
+00:11:26,769 --> 00:11:30,009
+ What we will see is that it's a very powerful way to think
+
+201
+00:11:30,009 --> 00:11:33,529
+ about it for exactly this reason of modularity.
+
+202
+00:11:34,990 --> 00:11:37,769
+ The bigger point that we will make in thinking about this
+
+203
+00:11:37,769 --> 00:11:42,009
+ first module is the idea of how do you make systems
+
+204
+00:11:42,009 --> 00:11:45,169
+ modular, how do you use abstraction to simplify the
+
+205
+00:11:45,169 --> 00:11:48,450
+ design task, and in particular, we will focus on
+
+206
+00:11:48,450 --> 00:11:49,970
+ something that we'll call PCAP.
+
+207
+00:11:49,970 --> 00:11:55,870
+ When you think about a system, we will always think about it in terms of what
+
+208
+00:11:55,870 --> 00:12:02,509
+ are the primitives, how do you combine them, how do you abstract a bigger
+
+209
+00:12:02,509 --> 00:12:08,649
+ behavior from those smaller behaviors, and what are the patterns that are
+
+210
+00:12:08,649 --> 00:12:15,309
+ important to capture. So the bigger point is this idea of PCAP, which we will
+
+211
+00:12:15,309 --> 00:12:17,950
+ will then revisit in every subsequent module.
+
+212
+00:12:20,509 --> 00:12:22,730
+ OK, second module is on signals and systems.
+
+213
+00:12:23,909 --> 00:12:25,809
+ That's also an enormous area.
+
+214
+00:12:27,389 --> 00:12:29,110
+ So we only have time to do one thing.
+
+215
+00:12:29,289 --> 00:12:33,250
+ The thing that we will do is we will think about discrete
+
+216
+00:12:33,250 --> 00:12:34,769
+ time feedback.
+
+217
+00:12:36,289 --> 00:12:40,210
+ How do you make a system that's cognizant of what it's
+
+218
+00:12:40,210 --> 00:12:46,649
+ done so that it in the future can do things with awareness of how it got
+
+219
+00:12:46,649 --> 00:12:54,330
+ there. A good example is robotic steering. So the idea is going to be, okay, think
+
+220
+00:12:54,330 --> 00:12:59,649
+ about what you do when you're driving a car and think about how you would tell a
+
+221
+00:12:59,649 --> 00:13:06,590
+ robot to do that same thing. Here's a naive driving algorithm. I don't
+
+222
+00:13:06,590 --> 00:13:08,789
+ recommend it, but it's widely used in Boston, apparently.
+
+223
+00:13:10,809 --> 00:13:13,750
+ I find myself to the right of where I would like to be.
+
+224
+00:13:13,929 --> 00:13:14,809
+ So what should I do?
+
+225
+00:13:16,230 --> 00:13:16,889
+ Turn left.
+
+226
+00:13:18,190 --> 00:13:20,210
+ I'm still to the right of where I'd like to be.
+
+227
+00:13:20,289 --> 00:13:20,809
+ What should I do?
+
+228
+00:13:21,929 --> 00:13:22,590
+ Turn left.
+
+229
+00:13:24,389 --> 00:13:26,350
+ Oh, I'm exactly where I should be.
+
+230
+00:13:27,129 --> 00:13:27,970
+ What should I do?
+
+231
+00:13:29,789 --> 00:13:30,789
+ Go straight ahead.
+
+232
+00:13:32,169 --> 00:13:33,190
+ Oh, that's a bad idea.
+
+233
+00:13:33,190 --> 00:13:39,169
+ and what we'll see is that perfectly innocent looking algorithms can have
+
+234
+00:13:39,169 --> 00:13:46,549
+ horrendous performance. What we'll do is try to make an abstraction of that, we'll
+
+235
+00:13:46,549 --> 00:13:51,490
+ try to make a model, we'll try to capture that in math so that we don't need to
+
+236
+00:13:51,490 --> 00:13:58,210
+ build it to see the bad behavior. We'll make a model, we'll use the model to
+
+237
+00:13:58,210 --> 00:14:00,190
+ to predict that that algorithm stinks.
+
+238
+00:14:01,629 --> 00:14:05,250
+ But more importantly, we'll use the model to figure out an
+
+239
+00:14:05,250 --> 00:14:06,429
+ algorithm that will work better.
+
+240
+00:14:07,389 --> 00:14:11,570
+ In fact, we'll even be able to come up with bounds on how
+
+241
+00:14:11,570 --> 00:14:14,429
+ well such a controller could possibly work.
+
+242
+00:14:15,570 --> 00:14:19,070
+ So the focus in this module is going to be, how do you make a
+
+243
+00:14:19,070 --> 00:14:20,230
+ model to predict behavior?
+
+244
+00:14:20,450 --> 00:14:24,289
+ How do you analyze the model so that you can design a
+
+245
+00:14:24,289 --> 00:14:24,830
+ better system?
+
+246
+00:14:25,370 --> 00:14:31,809
+ And then, how do you use the model and the analysis to make a well-behaved system?
+
+247
+00:14:34,490 --> 00:14:36,090
+ The third module is on circuits.
+
+248
+00:14:37,370 --> 00:14:38,789
+ Again, circuits is huge.
+
+249
+00:14:39,389 --> 00:14:41,570
+ We don't have time to talk about all of circuits.
+
+250
+00:14:41,769 --> 00:14:42,850
+ We'll do very simple things.
+
+251
+00:14:43,409 --> 00:14:50,710
+ We'll focus our attention on how you would add a sensory capability to an already complicated
+
+252
+00:14:50,710 --> 00:14:51,350
+ system.
+
+253
+00:14:52,370 --> 00:14:54,750
+ The idea is going to be to start with a robot.
+
+254
+00:14:54,909 --> 00:14:55,649
+ I guess this is brighter.
+
+255
+00:14:55,649 --> 00:15:04,850
+ start with our robots and design a head for the robot. The robot comes from the
+
+256
+00:15:04,850 --> 00:15:09,309
+ factory with sonar sensors. The sonar sensors are these things, there's eight
+
+257
+00:15:09,309 --> 00:15:13,870
+ of them, they tell you how far away something that reflects the ultrasonic
+
+258
+00:15:13,870 --> 00:15:22,309
+ wave is. As they come from the factory the robots can't sense light. What you'll
+
+259
+00:15:22,309 --> 00:15:23,470
+ will do is add light sensors.
+
+260
+00:15:24,710 --> 00:15:29,649
+ The goal is to make a system to modify the robot so that
+
+261
+00:15:29,649 --> 00:15:30,990
+ the robot tracks light.
+
+262
+00:15:31,470 --> 00:15:32,710
+ That's a very simple goal.
+
+263
+00:15:33,590 --> 00:15:37,950
+ And the way we'll do that is to augment the robot with a
+
+264
+00:15:37,950 --> 00:15:40,690
+ simple sensor here, showed a little more magnified here.
+
+265
+00:15:41,629 --> 00:15:44,929
+ The idea is that this is a LEGO motor.
+
+266
+00:15:45,789 --> 00:15:50,789
+ The LEGO motor will turn this relative to the attachment.
+
+267
+00:15:50,789 --> 00:15:50,929
+ attachment.
+
+268
+00:15:51,750 --> 00:15:54,070
+ That's the robot head's neck.
+
+269
+00:15:54,830 --> 00:15:57,529
+ So the robot will be able to do this.
+
+270
+00:15:59,759 --> 00:16:01,440
+ And the robot will have eyes.
+
+271
+00:16:01,720 --> 00:16:04,500
+ These are photo sensors, photo resistors, actually.
+
+272
+00:16:06,279 --> 00:16:08,500
+ So the idea is going to be that there's information
+
+273
+00:16:08,500 --> 00:16:12,259
+ available in those sensors for figuring out where a light is
+
+274
+00:16:12,259 --> 00:16:13,279
+ so that you could track it.
+
+275
+00:16:15,309 --> 00:16:18,789
+ Your job will be to build a circuit, that's this thing,
+
+276
+00:16:19,889 --> 00:16:22,929
+ that connects via cables, these red cables and yellow
+
+277
+00:16:22,929 --> 00:16:25,769
+ yellow cables, connects by cables over to this head.
+
+278
+00:16:25,870 --> 00:16:26,590
+ We'll give you the head.
+
+279
+00:16:28,350 --> 00:16:32,870
+ Your job will be to make the circuit that converts the
+
+280
+00:16:33,590 --> 00:16:36,029
+ signal from the photoresistor, which is in
+
+281
+00:16:36,029 --> 00:16:40,570
+ proportion to light, and figures out how to turn the
+
+282
+00:16:40,570 --> 00:16:46,230
+ motor to get the head to face the light, and then ship that
+
+283
+00:16:46,230 --> 00:16:49,450
+ information down to the robot to let the robot turn its
+
+284
+00:16:49,450 --> 00:16:50,509
+ wheels to get the body.
+
+285
+00:16:50,509 --> 00:16:54,149
+ So it's kind of like the light comes on right over here, the
+
+286
+00:16:54,149 --> 00:16:55,809
+ robot looks at it and says, oh yeah, that's where I want to
+
+287
+00:16:55,809 --> 00:16:55,889
+ be.
+
+288
+00:16:56,929 --> 00:16:59,549
+ So that's the idea in the third module, is to
+
+289
+00:16:59,549 --> 00:17:02,470
+ incorporate new sensing capabilities into the robot.
+
+290
+00:17:04,130 --> 00:17:06,690
+ The final module is on probability and planning.
+
+291
+00:17:07,710 --> 00:17:13,250
+ And the idea there is to learn about how you make systems
+
+292
+00:17:13,250 --> 00:17:23,470
+ Systems that are robust to uncertainty and that can make, can implement complicated plans
+
+293
+00:17:24,230 --> 00:17:27,269
+ that they too are robust to uncertainty.
+
+294
+00:17:28,309 --> 00:17:33,289
+ So there's a number of things that we will do, including creating maps of spaces that
+
+295
+00:17:33,289 --> 00:17:41,210
+ the robot doesn't understand, telling the robot how to localize itself, how if it woke
+
+296
+00:17:41,210 --> 00:17:42,930
+ woke up suddenly in an environment it could figure
+
+297
+00:17:42,930 --> 00:17:45,650
+ out where it is, how to make a plan.
+
+298
+00:17:47,190 --> 00:17:51,690
+ And as an example, I'll show you the kind of system that we
+
+299
+00:17:51,690 --> 00:17:52,390
+ will construct.
+
+300
+00:17:53,250 --> 00:17:55,509
+ Here the idea is that we have a robot.
+
+301
+00:17:55,730 --> 00:17:57,190
+ The robot knows where it is.
+
+302
+00:17:58,529 --> 00:17:59,990
+ Imagine there's a GPS in it.
+
+303
+00:18:00,089 --> 00:18:01,250
+ There isn't, but imagine there is.
+
+304
+00:18:01,329 --> 00:18:03,430
+ So the robot knows where it is, and it knows where it
+
+305
+00:18:03,430 --> 00:18:03,990
+ wants to go.
+
+306
+00:18:04,049 --> 00:18:04,690
+ That's the star.
+
+307
+00:18:07,009 --> 00:18:09,430
+ But it has no idea what kind of obstacles are in the way.
+
+308
+00:18:10,349 --> 00:18:16,029
+ So, you know, if you were a robotic driver in Boston, you know that you started out at
+
+309
+00:18:16,029 --> 00:18:20,049
+ home and you want to end up in MIT, but there's these annoying obstacles, you know, they're
+
+310
+00:18:20,049 --> 00:18:26,130
+ called people, that you should, in principle at least, you know, miss, okay?
+
+311
+00:18:26,210 --> 00:18:27,869
+ So that's kind of the idea.
+
+312
+00:18:30,049 --> 00:18:32,369
+ So I know where I am.
+
+313
+00:18:32,410 --> 00:18:32,809
+ I'm the robot.
+
+314
+00:18:32,930 --> 00:18:33,549
+ I know where I am.
+
+315
+00:18:33,589 --> 00:18:36,410
+ I know where I want to be, and I'm going to summarize that information here.
+
+316
+00:18:36,410 --> 00:18:39,970
+ here, where I am is purple, where I want to be is gold,
+
+317
+00:18:40,890 --> 00:18:44,109
+ and I have a plan that's blue.
+
+318
+00:18:45,069 --> 00:18:46,210
+ My plan's very simple.
+
+319
+00:18:46,309 --> 00:18:48,789
+ I don't know anything about anything other than I'm in
+
+320
+00:18:49,430 --> 00:18:53,690
+ Waltham, and I want to go to Cambridge, so blast east.
+
+321
+00:18:56,859 --> 00:18:59,539
+ So I imagine that the best way to do there is a straight
+
+322
+00:18:59,539 --> 00:18:59,799
+ line.
+
+323
+00:19:02,140 --> 00:19:06,220
+ OK, so now what I'm going to do is turn on the robot.
+
+324
+00:19:06,220 --> 00:19:08,400
+ The robot has now made one step.
+
+325
+00:19:09,339 --> 00:19:12,500
+ And I told you before about these sonar sensors.
+
+326
+00:19:13,180 --> 00:19:16,299
+ From the sonar sensors, the robot has learned now that
+
+327
+00:19:16,299 --> 00:19:19,460
+ there seems to be something reflecting at each of these
+
+328
+00:19:19,460 --> 00:19:20,180
+ black dots.
+
+329
+00:19:21,900 --> 00:19:24,400
+ It got a reflection from the black dots from
+
+330
+00:19:24,400 --> 00:19:25,960
+ the sonar sensors.
+
+331
+00:19:26,240 --> 00:19:28,640
+ That means there's probably a wall there, or a person, or
+
+332
+00:19:28,640 --> 00:19:29,940
+ something that, in principle, I should avoid.
+
+333
+00:19:29,940 --> 00:19:30,039
+ void.
+
+334
+00:19:32,039 --> 00:19:37,140
+ And the red dots represent, OK, the obstacle is so close I
+
+335
+00:19:37,140 --> 00:19:38,039
+ really can't get there.
+
+336
+00:19:38,940 --> 00:19:42,259
+ So I'm excluded from the red spots because I'm too big.
+
+337
+00:19:43,220 --> 00:19:46,200
+ The black spots seem to be an obstacle.
+
+338
+00:19:46,940 --> 00:19:49,819
+ The red spots seem to be where I can't fit.
+
+339
+00:19:50,640 --> 00:19:54,700
+ I'd still want to go from where I am, purple, to where I
+
+340
+00:19:54,700 --> 00:19:55,480
+ want to be, gold.
+
+341
+00:19:55,700 --> 00:19:57,599
+ So what I do is I compute a new plan.
+
+342
+00:20:00,440 --> 00:20:04,019
+ Then I start to take a step along that plan, and as I'm
+
+343
+00:20:04,019 --> 00:20:08,779
+ stepping along, so now I think that I can't go from where I
+
+344
+00:20:08,779 --> 00:20:09,640
+ started over to here.
+
+345
+00:20:09,740 --> 00:20:11,819
+ I have to go around this wall that I didn't
+
+346
+00:20:11,819 --> 00:20:12,559
+ know about initially.
+
+347
+00:20:14,059 --> 00:20:16,539
+ So now I just start driving, and it looks fine.
+
+348
+00:20:17,279 --> 00:20:18,019
+ I'm getting there.
+
+349
+00:20:19,700 --> 00:20:21,579
+ So now I know I can go straight down here.
+
+350
+00:20:21,680 --> 00:20:22,740
+ Oh, wait a minute, there's another wall.
+
+351
+00:20:23,039 --> 00:20:23,960
+ OK, what do I do now?
+
+352
+00:20:23,960 --> 00:20:30,400
+ Now, so as the robot goes along, it didn't know when it
+
+353
+00:20:30,400 --> 00:20:33,180
+ started what kinds of obstacles it would encounter.
+
+354
+00:20:33,460 --> 00:20:36,519
+ But as it's driving it learned, oh, that didn't work.
+
+355
+00:20:36,700 --> 00:20:37,339
+ Start over.
+
+356
+00:20:39,730 --> 00:20:45,910
+ So the idea is that this robot is executing a very
+
+357
+00:20:45,910 --> 00:20:47,410
+ complicated plan.
+
+358
+00:20:49,650 --> 00:20:52,309
+ The plan has, in fact, many subplans.
+
+359
+00:20:53,049 --> 00:20:57,910
+ and the subplans all involve uncertainty. It didn't know where the walls were when
+
+360
+00:20:57,910 --> 00:21:03,869
+ it started, and when it's all done it's going to have figured out where the
+
+361
+00:21:03,869 --> 00:21:09,549
+ walls were and, provided there's a way, presumably find the way to negotiate the
+
+362
+00:21:09,549 --> 00:21:16,869
+ maze and get to the destination. So the idea then is that if you
+
+363
+00:21:16,869 --> 00:21:21,609
+ were asked to write a conventional kind of program for
+
+364
+00:21:21,609 --> 00:21:24,390
+ for solving that, it might be kind of hard because of the
+
+365
+00:21:24,390 --> 00:21:26,150
+ number of contingencies involved.
+
+366
+00:21:27,109 --> 00:21:31,029
+ What we will do is break down the problem and figure out
+
+367
+00:21:31,029 --> 00:21:34,630
+ simple and elegant ways to deal not only with uncertainty,
+
+368
+00:21:34,950 --> 00:21:36,589
+ but how do you make complex plans.
+
+369
+00:21:41,170 --> 00:21:45,170
+ So as I said, our primary pedagogy is going to be
+
+370
+00:21:45,170 --> 00:21:47,569
+ practice, theory, practice.
+
+371
+00:21:48,829 --> 00:21:52,990
+ And so that ramifies in how the course is organized.
+
+372
+00:21:54,309 --> 00:21:58,369
+ So this is a quick map of some of the aspects of the course.
+
+373
+00:21:59,230 --> 00:22:01,269
+ So we'll have weekly lectures.
+
+374
+00:22:01,470 --> 00:22:03,630
+ It's lecture-unintensive.
+
+375
+00:22:04,049 --> 00:22:05,789
+ In total, there's only 13 lectures.
+
+376
+00:22:06,349 --> 00:22:08,509
+ We'll meet once a week here for lecture.
+
+377
+00:22:09,750 --> 00:22:10,730
+ There's readings.
+
+378
+00:22:11,309 --> 00:22:13,029
+ There's voluminous readings.
+
+379
+00:22:13,230 --> 00:22:16,150
+ There's readings about every topic that we will talk about.
+
+380
+00:22:16,450 --> 00:22:17,950
+ And the readings were specifically
+
+381
+00:22:17,950 --> 00:22:19,509
+ designed for this course.
+
+382
+00:22:19,730 --> 00:22:22,549
+ I highly recommend that you become familiar with the
+
+383
+00:22:22,549 --> 00:22:25,230
+ the readings, if you have a question after lecture, it's
+
+384
+00:22:25,230 --> 00:22:26,190
+ probably there.
+
+385
+00:22:26,390 --> 00:22:27,390
+ It's probably explained.
+
+386
+00:22:30,039 --> 00:22:32,400
+ We will do online tutor problems.
+
+387
+00:22:32,839 --> 00:22:35,900
+ We sent you an email if you pre-registered for the course,
+
+388
+00:22:35,980 --> 00:22:37,339
+ so you may already know about this.
+
+389
+00:22:37,460 --> 00:22:41,460
+ The idea is going to be that there's ways that you can
+
+390
+00:22:41,460 --> 00:22:43,559
+ prepare for the course by doing computer exercises.
+
+391
+00:22:44,960 --> 00:22:48,720
+ And we will also use those same kinds of exercises in all
+
+392
+00:22:48,720 --> 00:22:49,599
+ of the class sessions.
+
+393
+00:22:51,039 --> 00:22:53,140
+ We will have two kinds of lab experiences.
+
+394
+00:22:53,140 --> 00:22:57,420
+ Besides lecture, the other two events that you have to
+
+395
+00:22:57,420 --> 00:23:00,859
+ attend are a software lab and a design lab.
+
+396
+00:23:01,500 --> 00:23:02,759
+ That's the practice part.
+
+397
+00:23:04,000 --> 00:23:06,259
+ So after you learn a little bit about the theory by going
+
+398
+00:23:06,259 --> 00:23:09,299
+ to lecture, by doing the reading, then you go to the
+
+399
+00:23:09,299 --> 00:23:10,480
+ lab and try some things out.
+
+400
+00:23:12,019 --> 00:23:13,980
+ We call the first lab a software lab.
+
+401
+00:23:14,880 --> 00:23:15,880
+ It's a short lab.
+
+402
+00:23:16,039 --> 00:23:16,859
+ It's an hour and a half.
+
+403
+00:23:17,000 --> 00:23:17,700
+ You work individually.
+
+404
+00:23:17,960 --> 00:23:18,980
+ You try things out.
+
+405
+00:23:19,180 --> 00:23:20,160
+ You write little programs.
+
+406
+00:23:20,160 --> 00:23:24,839
+ So the courseware can check the program to see if it's OK.
+
+407
+00:23:28,039 --> 00:23:32,099
+ And primarily, the exercises in the software lab are due
+
+408
+00:23:32,099 --> 00:23:33,740
+ during the software lab.
+
+409
+00:23:33,900 --> 00:23:37,319
+ But on occasion, there will be extra things due a day or two
+
+410
+00:23:37,319 --> 00:23:37,559
+ later.
+
+411
+00:23:38,460 --> 00:23:40,640
+ The due dates are very clearly written in the tutor
+
+412
+00:23:40,640 --> 00:23:41,079
+ exercises.
+
+413
+00:23:42,539 --> 00:23:44,180
+ Once a week, there's a design lab.
+
+414
+00:23:44,279 --> 00:23:45,759
+ That's a three-hour session in which you
+
+415
+00:23:45,759 --> 00:23:46,420
+ work with a partner.
+
+416
+00:23:47,339 --> 00:23:51,900
+ The reason for the partner is that the intent, the
+
+417
+00:23:51,900 --> 00:23:54,880
+ difference between the design labs and the software labs, is
+
+418
+00:23:54,880 --> 00:23:58,539
+ that the design labs ask you to solve slightly more
+
+419
+00:23:58,539 --> 00:24:03,480
+ open-ended questions, the kind of question that you might
+
+420
+00:24:03,900 --> 00:24:07,660
+ have no clue what we're asking, open-ended, the kind
+
+421
+00:24:07,660 --> 00:24:09,700
+ of thing that you will be asked to do after you
+
+422
+00:24:09,700 --> 00:24:11,460
+ graduate, design the system.
+
+423
+00:24:11,579 --> 00:24:12,519
+ What do you mean, design the system?
+
+424
+00:24:15,059 --> 00:24:19,819
+ So the idea is that working with a partner will give you a
+
+425
+00:24:19,819 --> 00:24:23,900
+ second immediate source of help and a little more
+
+426
+00:24:23,900 --> 00:24:26,619
+ confidence if neither of you knows the solution so that you
+
+427
+00:24:26,619 --> 00:24:28,440
+ raise your hand and say, I don't have a clue what's going
+
+428
+00:24:28,440 --> 00:24:28,819
+ on here.
+
+429
+00:24:29,400 --> 00:24:32,220
+ So the idea is that once a week we do a software lab
+
+430
+00:24:32,220 --> 00:24:35,299
+ individually, once a week we do a design lab, a little more
+
+431
+00:24:35,299 --> 00:24:36,799
+ open-ended with partners.
+
+432
+00:24:37,900 --> 00:24:39,200
+ There's a little bit of written homework.
+
+433
+00:24:39,200 --> 00:24:42,759
+ work for total, it's not much compared to other subjects.
+
+434
+00:24:42,960 --> 00:24:44,079
+ It's mostly practice.
+
+435
+00:24:46,259 --> 00:24:50,500
+ There's a nano quiz just to help you keep pace, to make
+
+436
+00:24:50,500 --> 00:24:52,680
+ sure that you don't get too far behind.
+
+437
+00:24:53,240 --> 00:24:55,880
+ The first 15 minutes of every design lab
+
+438
+00:24:55,880 --> 00:24:57,220
+ starts with a nano quiz.
+
+439
+00:24:57,420 --> 00:25:02,619
+ The nano quiz are intended to be simple if you've caught up,
+
+440
+00:25:02,779 --> 00:25:03,980
+ if you're up to date.
+
+441
+00:25:04,480 --> 00:25:08,599
+ So the idea is that you go to design lab, the first thing
+
+442
+00:25:08,599 --> 00:25:12,539
+ you do is a little 15 minute nano quiz. The nano quiz uses a
+
+443
+00:25:12,539 --> 00:25:15,220
+ tutor much like the homework tutor, much like the Python
+
+444
+00:25:15,220 --> 00:25:22,319
+ tutor. And it's intended to be simple. But it does mean please
+
+445
+00:25:22,319 --> 00:25:26,519
+ get to the design lab on time. The nano quizzes are
+
+446
+00:25:26,519 --> 00:25:31,440
+ administered by the software. It starts when the hour when the
+
+447
+00:25:31,440 --> 00:25:35,759
+ design lab starts, it times out 15 minutes later. So if you come
+
+448
+00:25:35,759 --> 00:25:38,400
+ Come 10 minutes late, you'll have five minutes to do
+
+449
+00:25:38,400 --> 00:25:40,460
+ something that we plan to give you 15 minutes for.
+
+450
+00:25:43,900 --> 00:25:46,440
+ We will also have exams and interviews.
+
+451
+00:25:46,720 --> 00:25:51,259
+ The interviews are intended to be a one-on-one conversation
+
+452
+00:25:51,259 --> 00:25:52,420
+ about how the labs went.
+
+453
+00:25:55,039 --> 00:25:57,220
+ And we will have two midterms and a final.
+
+454
+00:25:58,940 --> 00:26:00,380
+ So that's kind of the logistics.
+
+455
+00:26:00,700 --> 00:26:04,960
+ The idea behind the logistics is practice, theory, practice.
+
+456
+00:26:04,960 --> 00:26:09,819
+ practice. Come to the labs, try things out, make sure you understand, develop a little
+
+457
+00:26:09,819 --> 00:26:15,680
+ code, type it in, see if it works. If it works, you're on top of things. You're ready to get
+
+458
+00:26:15,680 --> 00:26:18,819
+ the next batch of information from the lecture and readings.
+
+459
+00:26:20,779 --> 00:26:25,440
+ Okay, let's go on and let's talk about the technical material in the first module of
+
+460
+00:26:25,440 --> 00:26:30,299
+ the course, in the software module. We kick the course off talking about software engineering
+
+461
+00:26:30,299 --> 00:26:32,220
+ engineering for two reasons.
+
+462
+00:26:32,420 --> 00:26:33,900
+ We'd like you to know about software engineering.
+
+463
+00:26:34,140 --> 00:26:37,119
+ It's an incredibly important part of our department.
+
+464
+00:26:38,619 --> 00:26:41,599
+ It's an incredibly important part of the engineering of
+
+465
+00:26:41,599 --> 00:26:43,920
+ absolutely any system, any modern system.
+
+466
+00:26:45,980 --> 00:26:49,500
+ But we'd also like you to know about it because it provides a
+
+467
+00:26:49,500 --> 00:26:51,720
+ very convenient way to think about it.
+
+468
+00:26:51,740 --> 00:26:57,579
+ It's a convenient language to think about the design issues,
+
+469
+00:26:57,579 --> 00:27:01,339
+ issues, the engineering issues, and all the other parts of the class.
+
+470
+00:27:01,619 --> 00:27:03,119
+ So it's a very good place to start.
+
+471
+00:27:05,900 --> 00:27:13,900
+ So what I will do today is talk about some of the very simplest ideas about abstraction
+
+472
+00:27:13,900 --> 00:27:18,539
+ and modularity in what I think of as the lowest level of granularity.
+
+473
+00:27:19,119 --> 00:27:25,900
+ How do you think about abstraction and modularity at the micro scale, at the individual lines
+
+474
+00:27:25,900 --> 00:27:26,900
+ of code scale?
+
+475
+00:27:26,900 --> 00:27:27,180
+ scale.
+
+476
+00:27:28,440 --> 00:27:35,359
+ As I said earlier, we will, as we progress, look at modularity and abstraction at the
+
+477
+00:27:35,359 --> 00:27:36,039
+ higher scale.
+
+478
+00:27:37,140 --> 00:27:41,140
+ But we have to start somewhere, and we're going to start by thinking about how do you
+
+479
+00:27:41,140 --> 00:27:44,039
+ think about abstraction and modularity at the micro scale.
+
+480
+00:27:45,940 --> 00:27:47,380
+ Special note about programming.
+
+481
+00:27:47,380 --> 00:27:47,480
+ programming.
+
+482
+00:27:48,680 --> 00:27:58,099
+ So what we are trying to do is, in the first two weeks, ramp everybody up to some level
+
+483
+00:27:58,099 --> 00:28:01,579
+ of software security where you feel comfortable.
+
+484
+00:28:02,720 --> 00:28:08,680
+ So the first two weeks of this course is intended to make you comfortable with programming.
+
+485
+00:28:08,980 --> 00:28:11,660
+ We don't assume you've done extensive programming before.
+
+486
+00:28:11,660 --> 00:28:17,200
+ for, we want you to become comfortable that you're not
+
+487
+00:28:17,200 --> 00:28:21,259
+ behind, and that's the focus of the first two weeks exercises.
+
+488
+00:28:23,869 --> 00:28:27,279
+ If you have little or no previous background, if you
+
+489
+00:28:27,279 --> 00:28:30,720
+ are uncomfortable, please do the Python tutor exercises.
+
+490
+00:28:32,869 --> 00:28:38,099
+ If you do not have a lot of experience programming, if
+
+491
+00:28:38,099 --> 00:28:41,880
+ you're uncomfortable with the expectation that you can do
+
+492
+00:28:41,880 --> 00:28:43,980
+ programming, do that first.
+
+493
+00:28:46,019 --> 00:28:49,180
+ That takes priority over all the other assignments during
+
+494
+00:28:49,180 --> 00:28:50,000
+ the first two weeks.
+
+495
+00:28:51,839 --> 00:28:56,160
+ In particular, if you're uncomfortable, we will run a
+
+496
+00:28:56,160 --> 00:28:58,279
+ special Python help session on Sunday.
+
+497
+00:29:00,079 --> 00:29:05,119
+ And if you attend that, you can get a free extension.
+
+498
+00:29:07,940 --> 00:29:12,420
+ The idea is completing the tutor exercises is intended to
+
+499
+00:29:12,420 --> 00:29:14,740
+ make you feel comfortable that you have the software
+
+500
+00:29:14,740 --> 00:29:17,039
+ to our background to finish the rest of the course.
+
+501
+00:29:18,160 --> 00:29:19,579
+ Do that first.
+
+502
+00:29:20,440 --> 00:29:25,880
+ We will forgive falling behind in other things so that you
+
+503
+00:29:25,880 --> 00:29:27,299
+ feel comfortable with programming.
+
+504
+00:29:29,279 --> 00:29:34,839
+ If at the end of two weeks you still feel uncomfortable, we
+
+505
+00:29:34,839 --> 00:29:40,700
+ have a deal with 600, the Python programming class, that
+
+506
+00:29:40,700 --> 00:29:42,799
+ they will allow you to switch your registration
+
+507
+00:29:42,799 --> 00:29:48,920
+ from 601 to 600, but that expires Valentine's Day.
+
+508
+00:29:51,390 --> 00:29:54,690
+ So you have to make up your mind before Valentine's Day if
+
+509
+00:29:54,690 --> 00:29:55,910
+ you'd like to use that option.
+
+510
+00:29:56,609 --> 00:29:59,910
+ So the idea is we'd like you to be
+
+511
+00:29:59,910 --> 00:30:01,130
+ comfortable with programming.
+
+512
+00:30:01,410 --> 00:30:04,250
+ If you haven't programmed before, do the Python tutor
+
+513
+00:30:04,250 --> 00:30:08,390
+ exercises, go to software lab, go to design lab, but work on
+
+514
+00:30:08,390 --> 00:30:09,230
+ the tutor exercises.
+
+515
+00:30:09,890 --> 00:30:11,549
+ The staff will help you with them.
+
+516
+00:30:11,549 --> 00:30:18,509
+ become. You can go to office hours. There's office hours listed on the home page. You
+
+517
+00:30:18,509 --> 00:30:22,630
+ should try to become comfortable, and you should try to set as your goal, I'm going
+
+518
+00:30:22,630 --> 00:30:28,170
+ to be comfortable before Valentine's Day. And if you're not, talk to a staff, a staff
+
+519
+00:30:28,170 --> 00:30:37,380
+ member about that. OK. So what do I want you to know about programming? Well, we're going
+
+520
+00:30:37,380 --> 00:30:38,059
+ going to use Python.
+
+521
+00:30:39,099 --> 00:30:45,490
+ We selected Python because it's very simple and because
+
+522
+00:30:46,109 --> 00:30:51,009
+ it lets us illustrate some very important ideas in
+
+523
+00:30:51,009 --> 00:30:53,390
+ software engineering in a very simple context.
+
+524
+00:30:54,630 --> 00:30:55,750
+ That's the reason.
+
+525
+00:30:56,750 --> 00:31:00,930
+ One of the reasons that it's simple is that
+
+526
+00:31:00,930 --> 00:31:01,650
+ it's an interpreter.
+
+527
+00:31:04,460 --> 00:31:09,839
+ After some initialization, the behavior of Python is to fall
+
+528
+00:31:09,839 --> 00:31:16,220
+ into an interpreter loop. The interpreter loop is ask the user what he would like
+
+529
+00:31:16,220 --> 00:31:25,329
+ me to do, read what the user types, figure out what they're talking about, and print
+
+530
+00:31:25,329 --> 00:31:32,509
+ the result. Repeat. Very simple. What that means is that you can learn by doing.
+
+531
+00:31:34,769 --> 00:31:40,190
+ That's one of the points of today's software lab. You can simply walk up to a
+
+532
+00:31:40,190 --> 00:31:49,670
+ computer, type the word Python, what you type is in red, type the word Python, it will prompt
+
+533
+00:31:49,670 --> 00:31:54,950
+ you, so this chevron that says, I'd like you to tell me something to do.
+
+534
+00:31:55,069 --> 00:31:55,849
+ I have nothing to do.
+
+535
+00:31:57,130 --> 00:32:01,210
+ If you type 2, Python tries to interpret that.
+
+536
+00:32:01,289 --> 00:32:04,250
+ In this particular case, Python says, oh, I see.
+
+537
+00:32:04,690 --> 00:32:06,210
+ That's a primitive data item.
+
+538
+00:32:06,490 --> 00:32:07,309
+ That's an integer.
+
+539
+00:32:07,309 --> 00:32:14,630
+ integer. This person wants me to understand an integer, and so it will echo 2, indicating
+
+540
+00:32:14,630 --> 00:32:22,990
+ that it thinks you want it to understand a simple integer. Similarly, if you type 5.7,
+
+541
+00:32:23,130 --> 00:32:29,230
+ it says, oh, I got that. That's a float. The person wants me to remember a floating point
+
+542
+00:32:29,230 --> 00:32:37,339
+ number, and it will similarly echo the float. Now, of course, the floats don't have a...
+
+543
+00:32:38,339 --> 00:32:41,640
+ So there's no exact representation for floats, right?
+
+544
+00:32:41,700 --> 00:32:42,799
+ There's too many of them, right?
+
+545
+00:32:42,859 --> 00:32:43,579
+ There's a lot of them.
+
+546
+00:32:44,299 --> 00:32:46,400
+ There's even more floats than there are ints, right?
+
+547
+00:32:47,740 --> 00:32:49,680
+ So it has an approximation.
+
+548
+00:32:50,559 --> 00:32:54,500
+ So it will print its approximation to the float that
+
+549
+00:32:54,500 --> 00:32:56,519
+ it thinks you are interested in.
+
+550
+00:32:59,220 --> 00:33:04,380
+ If you type a string, hello, it'll say, oh, primitive data
+
+551
+00:33:04,380 --> 00:33:05,299
+ structure, string.
+
+552
+00:33:05,299 --> 00:33:08,640
+ string, and it'll print out that string.
+
+553
+00:33:09,420 --> 00:33:12,700
+ So the idea is one of the features of Python that makes
+
+554
+00:33:12,700 --> 00:33:15,799
+ it easy to learn is the fact that it's interpreter-based.
+
+555
+00:33:16,059 --> 00:33:17,140
+ You can play around.
+
+556
+00:33:17,299 --> 00:33:18,240
+ You can learn by doing.
+
+557
+00:33:19,240 --> 00:33:22,859
+ Now, of course, if the only thing it did was simple data
+
+558
+00:33:22,859 --> 00:33:24,799
+ structures, it would not be very useful.
+
+559
+00:33:27,220 --> 00:33:31,859
+ So the next more complex thing that it can do is think about
+
+560
+00:33:31,859 --> 00:33:32,319
+ combinations.
+
+561
+00:33:32,319 --> 00:33:32,599
+ combinations.
+
+562
+00:33:33,900 --> 00:33:37,180
+ If you type 2 plus 3, it says, oh, I got it.
+
+563
+00:33:37,819 --> 00:33:39,720
+ This person's interested in a combination.
+
+564
+00:33:39,940 --> 00:33:43,980
+ I should combine by the plus operator 2 ints, 2 and 3.
+
+565
+00:33:45,960 --> 00:33:48,599
+ Oh, and if I do that, if I combine by the plus operator
+
+566
+00:33:48,599 --> 00:33:49,819
+ 2 and 3, I'll get 5.
+
+567
+00:33:50,039 --> 00:33:51,000
+ So it prints 5.
+
+568
+00:33:52,319 --> 00:33:56,920
+ So that's a way you know that it interprets 2 plus 3 as 5.
+
+569
+00:33:59,279 --> 00:34:04,680
+ Similarly here, except I've mixed types, 5.7 plus 3, it
+
+570
+00:34:04,680 --> 00:34:10,579
+ says, oh, this user wants me to apply the plus operator on
+
+571
+00:34:10,579 --> 00:34:11,639
+ a float and an int.
+
+572
+00:34:12,099 --> 00:34:14,440
+ OK, well, I'll upgrade the int to a float.
+
+573
+00:34:15,400 --> 00:34:20,460
+ I'll do the float version, and I'll get this, which is its
+
+574
+00:34:20,460 --> 00:34:22,280
+ representation of 8.7.
+
+575
+00:34:22,280 --> 00:34:22,360
+ happen.
+
+576
+00:34:25,789 --> 00:34:29,250
+ So the idea is that it will first try to interpret what
+
+577
+00:34:29,250 --> 00:34:30,809
+ you're saying as a simple data type.
+
+578
+00:34:31,269 --> 00:34:34,789
+ If that works, it prints the result to tell you what it
+
+579
+00:34:34,789 --> 00:34:35,710
+ thinks is going on.
+
+580
+00:34:35,949 --> 00:34:38,230
+ It then will try to interpret it as an expression.
+
+581
+00:34:39,610 --> 00:34:41,969
+ And sometimes the expressions won't make sense.
+
+582
+00:34:43,289 --> 00:34:46,289
+ In particular, if you try to add an int to a string, it's
+
+583
+00:34:46,289 --> 00:34:46,829
+ going to say, huh?
+
+584
+00:34:47,969 --> 00:34:50,730
+ And over the course of the first two weeks, we hope that
+
+585
+00:34:50,730 --> 00:34:53,730
+ that you get familiar with interpreting this kind of mess.
+
+586
+00:34:55,329 --> 00:34:57,670
+ That's Python's attempt to tell you
+
+587
+00:34:58,070 --> 00:35:00,409
+ what it was trying to do on your behalf
+
+588
+00:35:01,650 --> 00:35:03,750
+ and can't figure out what you're talking about.
+
+589
+00:35:06,590 --> 00:35:09,789
+ OK, so that was simple, but it already
+
+590
+00:35:09,789 --> 00:35:11,670
+ illustrates something that's very important,
+
+591
+00:35:12,710 --> 00:35:14,789
+ and that's the idea of a composition.
+
+592
+00:35:16,690 --> 00:35:20,170
+ So the way Python works, the fact
+
+593
+00:35:20,170 --> 00:35:27,070
+ that when you added three to two, it came out five, what we were doing was
+
+594
+00:35:27,070 --> 00:35:31,050
+ composing complicated, well potentially complicated, that was pretty simple,
+
+595
+00:35:31,710 --> 00:35:37,889
+ potentially complicated expressions and reducing them to a single data structure.
+
+596
+00:35:40,469 --> 00:35:48,750
+ And so that means that in some sense this operation three times eight can be
+
+597
+00:35:48,750 --> 00:35:53,670
+ be thought of as exactly the same as if the user had typed
+
+598
+00:35:53,670 --> 00:36:00,889
+ in 24, whenever you can substitute for a complex
+
+599
+00:36:00,889 --> 00:36:05,250
+ expression a simpler thing, we say that the system is
+
+600
+00:36:05,250 --> 00:36:09,550
+ compositional, that's a very powerful idea.
+
+601
+00:36:09,849 --> 00:36:12,230
+ Even though it's simple, it's a very powerful idea.
+
+602
+00:36:12,409 --> 00:36:13,969
+ And it's an idea that you all know.
+
+603
+00:36:15,789 --> 00:36:18,889
+ You've seen it before in algebra, in arithmetic.
+
+604
+00:36:20,150 --> 00:36:24,610
+ So in arithmetic expressions, you can think about how the
+
+605
+00:36:24,610 --> 00:36:26,230
+ sum of two integers is an int.
+
+606
+00:36:29,250 --> 00:36:30,230
+ That's a closure.
+
+607
+00:36:30,349 --> 00:36:33,090
+ That's a kind of a combination that makes the
+
+608
+00:36:33,090 --> 00:36:34,130
+ system compositional.
+
+609
+00:36:34,269 --> 00:36:39,949
+ And that provides a layer of hierarchical thinking so that
+
+610
+00:36:39,949 --> 00:36:43,030
+ in your head, even though it says 3 times 8, you don't need
+
+611
+00:36:43,030 --> 00:36:43,989
+ to remember that anymore.
+
+612
+00:36:43,989 --> 00:36:47,829
+ more, you can say, oh, for any purposes that follow, I might
+
+613
+00:36:47,829 --> 00:36:49,809
+ just as well think of 3 times 8 as being a
+
+614
+00:36:49,809 --> 00:36:51,050
+ single integer, 24.
+
+615
+00:36:53,289 --> 00:36:57,809
+ It's part of many other kinds of systems, for
+
+616
+00:36:57,809 --> 00:36:59,150
+ example, natural language.
+
+617
+00:37:00,369 --> 00:37:03,710
+ The simplest example in natural language is that you
+
+618
+00:37:03,710 --> 00:37:05,809
+ can think about apples are good as snacks.
+
+619
+00:37:06,190 --> 00:37:09,469
+ Apples is a noun, it's a plural noun.
+
+620
+00:37:09,469 --> 00:37:14,949
+ noun, or you could substitute apples and oranges, and it
+
+621
+00:37:14,949 --> 00:37:17,469
+ makes complete sense within that same structure.
+
+622
+00:37:17,750 --> 00:37:20,570
+ So apples and oranges are good as snacks.
+
+623
+00:37:21,789 --> 00:37:27,690
+ The combination of apples and oranges works in every way
+
+624
+00:37:27,690 --> 00:37:31,190
+ from the point of view of the grammar in the same way that a
+
+625
+00:37:31,190 --> 00:37:34,869
+ simple noun, apples, worked.
+
+626
+00:37:35,909 --> 00:37:43,050
+ What we would like to do is use that idea as the starting point for a more general compositional
+
+627
+00:37:43,050 --> 00:37:43,449
+ system.
+
+628
+00:37:46,349 --> 00:37:49,949
+ And a good way to think about that is by way of names.
+
+629
+00:37:51,889 --> 00:37:59,010
+ What if we had some sequence of operations that we think is particularly important so
+
+630
+00:37:59,010 --> 00:38:04,389
+ that we would like to somehow canonize that so that subsequently we can use that sequence
+
+631
+00:38:04,389 --> 00:38:05,710
+ sequence of operations easily.
+
+632
+00:38:07,710 --> 00:38:10,070
+ Python provides a very simple way to do it.
+
+633
+00:38:10,369 --> 00:38:11,769
+ Every programming language does.
+
+634
+00:38:11,909 --> 00:38:12,789
+ It's not unique to Python.
+
+635
+00:38:14,429 --> 00:38:17,030
+ But the idea is, so here's an example.
+
+636
+00:38:17,309 --> 00:38:21,210
+ 2 times 2, I'm squaring 2 and get 4.
+
+637
+00:38:21,469 --> 00:38:23,530
+ 3 times 3, I'm squaring 3 and I'm getting 9.
+
+638
+00:38:24,650 --> 00:38:29,050
+ 8 plus 4 times 8 plus 4, I'm squaring 8 plus 4.
+
+639
+00:38:29,230 --> 00:38:31,090
+ 8 plus 4, well, I can think of that as 12.
+
+640
+00:38:31,269 --> 00:38:32,750
+ I'm squaring 12, I'm getting 144.
+
+641
+00:38:32,750 --> 00:38:37,030
+ 44, the thing I'm trying to illustrate there is the notion
+
+642
+00:38:37,030 --> 00:38:37,789
+ of squaring.
+
+643
+00:38:38,909 --> 00:38:43,849
+ Squaring is a sequence of operations that I would like
+
+644
+00:38:43,849 --> 00:38:48,949
+ to be able to canonize as a single entity so that in
+
+645
+00:38:48,949 --> 00:38:51,030
+ subsequent programs, I can think of the squaring
+
+646
+00:38:51,030 --> 00:38:55,250
+ operation as a single operation, just like I think
+
+647
+00:38:55,250 --> 00:38:55,650
+ of times.
+
+648
+00:38:56,550 --> 00:39:00,789
+ The way we say that in Python is define square of x to be
+
+649
+00:39:00,789 --> 00:39:02,429
+ be return x squared.
+
+650
+00:39:07,119 --> 00:39:10,880
+ Then, having made that definition, I can say square of
+
+651
+00:39:10,880 --> 00:39:12,059
+ 6, and the answer is 36.
+
+652
+00:39:13,599 --> 00:39:16,719
+ OK, this is a very small step, but it illustrates a very
+
+653
+00:39:16,719 --> 00:39:20,619
+ important point, the idea being that Python provides a
+
+654
+00:39:20,619 --> 00:39:23,559
+ compositional facility.
+
+655
+00:39:27,360 --> 00:39:29,099
+ And it's hierarchical.
+
+656
+00:39:31,090 --> 00:39:35,190
+ Having defined square, I can use square just as though it
+
+657
+00:39:35,190 --> 00:39:36,170
+ it were a primitive operator.
+
+658
+00:39:38,400 --> 00:39:43,599
+ And I can use square to define higher level operations.
+
+659
+00:39:44,539 --> 00:39:47,679
+ So for example, what if I were interested in doing lots of
+
+660
+00:39:47,679 --> 00:39:48,519
+ sums of squares?
+
+661
+00:39:49,000 --> 00:39:50,159
+ Say I'm Pythagoras.
+
+662
+00:39:52,119 --> 00:39:55,400
+ So I might want to add the square of 2 and the square of
+
+663
+00:39:55,400 --> 00:39:59,440
+ 4 to get 20, or the square of 3 with the square of 4 to get
+
+664
+00:39:59,440 --> 00:39:59,860
+ 25.
+
+665
+00:39:59,860 --> 00:40:06,719
+ 5, using that simple idea of composition, we can write a
+
+666
+00:40:06,719 --> 00:40:08,739
+ new program, sum of squares.
+
+667
+00:40:09,719 --> 00:40:13,780
+ Sum of squares takes two arguments, x and y, and it
+
+668
+00:40:13,780 --> 00:40:15,780
+ returns the square of x and the square of y.
+
+669
+00:40:16,619 --> 00:40:19,679
+ Sum of squares doesn't care about how you
+
+670
+00:40:19,679 --> 00:40:20,360
+ compute the square.
+
+671
+00:40:21,579 --> 00:40:23,960
+ It trusts that square knows how to do that.
+
+672
+00:40:24,760 --> 00:40:26,480
+ So the work is smaller.
+
+673
+00:40:26,480 --> 00:40:32,500
+ smaller, the idea is that square takes care of squaring
+
+674
+00:40:32,500 --> 00:40:33,280
+ single numbers.
+
+675
+00:40:35,119 --> 00:40:38,599
+ Sum of squares doesn't have to know how to square numbers.
+
+676
+00:40:38,940 --> 00:40:43,159
+ It just needs to know how to make a sum of squares.
+
+677
+00:40:43,960 --> 00:40:47,440
+ So what we've done is we've broken a task, which was not
+
+678
+00:40:47,440 --> 00:40:51,860
+ very complicated, but the whole idea is hierarchical.
+
+679
+00:40:51,860 --> 00:40:56,280
+ We've taken a problem and broken it into two pieces.
+
+680
+00:40:56,559 --> 00:40:59,519
+ We factored the problem into how do you do a square and how
+
+681
+00:40:59,519 --> 00:41:00,340
+ do you sum squares.
+
+682
+00:41:02,980 --> 00:41:07,219
+ And the idea then is that this hierarchical structure is a
+
+683
+00:41:07,219 --> 00:41:12,900
+ way of building complex systems out of simpler parts.
+
+684
+00:41:16,670 --> 00:41:23,349
+ So that's the idea of how you would build programs that are
+
+685
+00:41:23,349 --> 00:41:30,820
+ are compositional, Python also provides a utility for making
+
+686
+00:41:30,820 --> 00:41:36,380
+ data structures that are compositional.
+
+687
+00:41:39,650 --> 00:41:42,349
+ The most primitive is a list.
+
+688
+00:41:44,559 --> 00:41:47,860
+ So in Python, you can specify a list.
+
+689
+00:41:48,239 --> 00:41:49,539
+ Here's a list of integers.
+
+690
+00:41:51,119 --> 00:41:54,079
+ So the list says beginning list, end of list,
+
+691
+00:41:54,239 --> 00:41:54,900
+ elements of list.
+
+692
+00:41:55,019 --> 00:41:56,340
+ So there's five elements in the list.
+
+693
+00:41:56,599 --> 00:41:58,239
+ The integers 1, 2, 3, 4, 5.
+
+694
+00:41:58,239 --> 00:42:05,920
+ Five, Python doesn't care what the elements of a list are.
+
+695
+00:42:07,000 --> 00:42:08,940
+ We'll see in a minute that that's really important.
+
+696
+00:42:11,159 --> 00:42:13,460
+ But for the time being, the simplest thing that you can
+
+697
+00:42:13,460 --> 00:42:14,860
+ imagine is a heterogeneous list.
+
+698
+00:42:15,519 --> 00:42:18,480
+ It's not critical that the list contain just integers.
+
+699
+00:42:20,789 --> 00:42:24,150
+ Here's a list that contains an int, a string, an int, and a
+
+700
+00:42:24,150 --> 00:42:24,369
+ string.
+
+701
+00:42:25,130 --> 00:42:26,150
+ Python doesn't care.
+
+702
+00:42:26,550 --> 00:42:28,469
+ It's a list that has four elements.
+
+703
+00:42:28,590 --> 00:42:29,730
+ The first element's an int.
+
+704
+00:42:29,730 --> 00:42:31,429
+ the second element's a string, et cetera.
+
+705
+00:42:33,949 --> 00:42:36,050
+ Here's an even more complex example.
+
+706
+00:42:36,369 --> 00:42:37,909
+ Here's a list of lists.
+
+707
+00:42:41,150 --> 00:42:44,449
+ How many elements are in that list?
+
+708
+00:42:46,429 --> 00:42:47,070
+ Three.
+
+709
+00:42:49,050 --> 00:42:51,230
+ How many elements are in that list?
+
+710
+00:42:52,750 --> 00:42:57,550
+ So the idea is that you can build more complex data
+
+711
+00:42:57,550 --> 00:42:59,110
+ structures out of simple ones.
+
+712
+00:42:59,309 --> 00:43:01,989
+ That's the idea of compositional factoring
+
+713
+00:43:02,809 --> 00:43:03,869
+ applied to data.
+
+714
+00:43:03,869 --> 00:43:09,900
+ data, just like it was important when we were
+
+715
+00:43:09,900 --> 00:43:14,820
+ thinking about procedures to associate names with
+
+716
+00:43:14,820 --> 00:43:20,300
+ procedures, that's what def did, we can also think about
+
+717
+00:43:20,300 --> 00:43:22,639
+ associating names with data structures.
+
+718
+00:43:24,340 --> 00:43:27,039
+ And that's what we use something that Python calls a
+
+719
+00:43:27,039 --> 00:43:28,360
+ variable for.
+
+720
+00:43:29,099 --> 00:43:36,460
+ So I can say b is 3, and that associates the data item 3 with
+
+721
+00:43:36,460 --> 00:43:46,199
+ with the label b. I can say x is 5 times 2.2. Python will figure out what I mean by the
+
+722
+00:43:46,199 --> 00:43:52,719
+ expression on the right. It'll figure out that I'm composing by using the star operator,
+
+723
+00:43:52,940 --> 00:43:57,559
+ which is multiply, an integer and a float, which will give me a float. The answer to
+
+724
+00:43:57,559 --> 00:44:03,619
+ that's going to be a floating point number. And it will assign a label x to that floating
+
+725
+00:44:03,619 --> 00:44:10,630
+ point number, you can have a more complicated list, a data structure, and
+
+726
+00:44:11,190 --> 00:44:15,650
+ associate the name y with it. Then having associated the name y, you get many of
+
+727
+00:44:15,650 --> 00:44:19,909
+ the same benefits of associating a name with a data structure that we got
+
+728
+00:44:19,909 --> 00:44:28,570
+ previously in associating a name with an operation. So we can say y of 0, and what
+
+729
+00:44:28,570 --> 00:44:32,829
+ What that means is, what's the zeroth element of the data
+
+730
+00:44:32,829 --> 00:44:33,409
+ structure y?
+
+731
+00:44:35,110 --> 00:44:38,369
+ So the zeroth element of the data structure y is a list,
+
+732
+00:44:38,489 --> 00:44:39,070
+ 1, 2, 3.
+
+733
+00:44:42,570 --> 00:44:44,630
+ Python has some funky notations.
+
+734
+00:44:45,610 --> 00:44:48,170
+ The minus 1 element is the last one.
+
+735
+00:44:48,610 --> 00:44:51,670
+ So the minus 1 element of y is 7, 8, 9.
+
+736
+00:44:54,090 --> 00:44:56,070
+ And it's completely hierarchical.
+
+737
+00:44:56,949 --> 00:45:00,809
+ If I ask for the minus 1 element of y, I get 7, 8, 9.
+
+738
+00:45:00,809 --> 00:45:02,989
+ But then if I ask for the first element of that result,
+
+739
+00:45:05,030 --> 00:45:05,769
+ I get 8.
+
+740
+00:45:07,349 --> 00:45:08,650
+ OK, everything's clear?
+
+741
+00:45:12,780 --> 00:45:14,800
+ OK, just to make sure everything's clear, I want to
+
+742
+00:45:14,800 --> 00:45:15,420
+ ask you a question.
+
+743
+00:45:16,820 --> 00:45:19,239
+ But to kick off the idea of working together, I'd like you
+
+744
+00:45:19,239 --> 00:45:20,699
+ to think about this question with your neighbor.
+
+745
+00:45:21,360 --> 00:45:25,360
+ So before thinking about this question, everybody stand up.
+
+746
+00:45:27,690 --> 00:45:28,849
+ Introduce yourself to your neighbor.
+
+747
+00:46:34,130 --> 00:46:42,519
+ So now I'd like you to each discuss with your neighbor the
+
+748
+00:46:43,760 --> 00:46:45,980
+ The list that is best represented by which of the
+
+749
+00:46:45,980 --> 00:46:46,739
+ following figures?
+
+750
+00:46:46,880 --> 00:46:49,119
+ 1, 2, 3, 4, or 5, none of the above.
+
+751
+00:46:49,500 --> 00:46:52,659
+ And in 30 seconds, I'm going to ask everybody to raise a
+
+752
+00:46:52,659 --> 00:46:55,739
+ hand with a number of fingers indicating the right answer.
+
+753
+00:46:57,820 --> 00:46:58,880
+ You're allowed to talk.
+
+754
+00:46:59,880 --> 00:47:01,800
+ That's the whole point of having a partner.
+
+755
+00:48:37,710 --> 00:48:38,150
+ OK.
+
+756
+00:48:41,599 --> 00:48:45,800
+ I'd like everybody now to raise their hand, put up the
+
+757
+00:48:45,800 --> 00:48:48,460
+ number of fingers that show the answer, and I want to
+
+758
+00:48:49,000 --> 00:48:49,260
+ tally.
+
+759
+00:48:52,179 --> 00:48:52,619
+ Fantastic.
+
+760
+00:48:52,619 --> 00:48:52,900
+ Fantastic.
+
+761
+00:48:52,940 --> 00:48:53,719
+ Everybody gets it.
+
+762
+00:48:54,260 --> 00:48:57,320
+ OK, so which one do you like?
+
+763
+00:48:57,719 --> 00:48:58,199
+ Three.
+
+764
+00:48:59,159 --> 00:49:00,239
+ Why do you like three?
+
+765
+00:49:00,639 --> 00:49:01,840
+ Somebody explain this to me?
+
+766
+00:49:04,190 --> 00:49:05,190
+ It just looks good.
+
+767
+00:49:05,869 --> 00:49:06,909
+ It's pattern recognition.
+
+768
+00:49:08,309 --> 00:49:09,349
+ What's good about three?
+
+769
+00:49:16,190 --> 00:49:16,670
+ Compositional.
+
+770
+00:49:16,730 --> 00:49:19,530
+ What is the compositional element in the pictures?
+
+771
+00:49:22,519 --> 00:49:23,760
+ What represents what?
+
+772
+00:49:26,000 --> 00:49:29,119
+ OK, A represents A. That's pretty easy, right?
+
+773
+00:49:30,360 --> 00:49:32,400
+ So that takes care of the bulk of the figures.
+
+774
+00:49:32,400 --> 00:49:45,820
+ figures. What's the blue lines represent? Someone else? I didn't quite understand. They
+
+775
+00:49:45,820 --> 00:49:54,699
+ represent a list. Where is the list on the figures? The vertex. The vertices are lists.
+
+776
+00:49:56,599 --> 00:50:05,800
+ So in 3, at the highest level, we have a list that's composed of how many elements? Two.
+
+777
+00:50:06,219 --> 00:50:12,239
+ The first element of that list is? And the second element of that list is? Another list.
+
+778
+00:50:12,239 --> 00:50:14,699
+ list, that's the hierarchical part, right?
+
+779
+00:50:15,260 --> 00:50:17,960
+ That second list has how many elements?
+
+780
+00:50:19,000 --> 00:50:21,260
+ Five, sorry, recursive, you got it.
+
+781
+00:50:22,739 --> 00:50:25,320
+ What is the list represented by number two?
+
+782
+00:50:28,820 --> 00:50:31,000
+ A single list with five elements.
+
+783
+00:50:32,199 --> 00:50:36,860
+ Square bracket a comma b comma c comma d comma e, square
+
+784
+00:50:36,860 --> 00:50:38,480
+ bracket, right?
+
+785
+00:50:38,639 --> 00:50:40,760
+ What is the list represented by that one?
+
+786
+00:50:46,940 --> 00:50:48,920
+ It's not a list, right?
+
+787
+00:50:49,239 --> 00:50:50,119
+ What is it?
+
+788
+00:50:50,119 --> 00:50:51,099
+ But who knows?
+
+789
+00:51:01,349 --> 00:51:03,130
+ So we could make that a variable.
+
+790
+00:51:04,730 --> 00:51:09,010
+ If we said a is a variable that comprises b and c, then
+
+791
+00:51:09,010 --> 00:51:10,869
+ we have the problem of how we're going to associate
+
+792
+00:51:11,389 --> 00:51:15,429
+ variables and elements into this list.
+
+793
+00:51:16,610 --> 00:51:20,130
+ So the weird thing about this one and, let's see, that one's
+
+794
+00:51:20,130 --> 00:51:22,010
+ weird, this one's also kind of weird.
+
+795
+00:51:22,110 --> 00:51:27,449
+ This one's weird because we're giving names to lists in a
+
+796
+00:51:27,449 --> 00:51:32,590
+ fashion that's not showed up here, that's not to say you
+
+797
+00:51:32,590 --> 00:51:35,210
+ couldn't invent a meaning, it's just that it doesn't map
+
+798
+00:51:35,210 --> 00:51:37,090
+ very well to that representation.
+
+799
+00:51:38,829 --> 00:51:43,269
+ Similarly over here, we seem to be giving the name b to the
+
+800
+00:51:43,269 --> 00:51:46,730
+ element a, and then the name c to the element b.
+
+801
+00:51:47,389 --> 00:51:49,090
+ It's not clear what we're doing there either.
+
+802
+00:51:50,250 --> 00:51:53,750
+ So the point is to get you thinking about the abstract
+
+803
+00:51:53,750 --> 00:51:57,010
+ representation of lists and how that maps into a complex
+
+804
+00:51:57,010 --> 00:51:57,610
+ complex data structure.
+
+805
+00:51:57,869 --> 00:51:58,670
+ That was the whole point.
+
+806
+00:51:59,929 --> 00:52:04,269
+ OK, so we've talked about then four things so far.
+
+807
+00:52:05,690 --> 00:52:09,510
+ How do you think about operations in a hierarchical
+
+808
+00:52:09,510 --> 00:52:12,070
+ fashion, and the idea was composition?
+
+809
+00:52:12,750 --> 00:52:17,730
+ We think about composing simple operations to make
+
+810
+00:52:18,269 --> 00:52:19,889
+ bigger compound operations.
+
+811
+00:52:20,869 --> 00:52:25,050
+ That's a way of saying there's this set of operations that I
+
+812
+00:52:25,050 --> 00:52:25,909
+ I want to call foo.
+
+813
+00:52:26,769 --> 00:52:29,389
+ So every time I do this complicated thing that has
+
+814
+00:52:29,389 --> 00:52:32,110
+ three pages of code, that's one foo.
+
+815
+00:52:33,489 --> 00:52:37,769
+ And that's a way that we can then combine foos in some
+
+816
+00:52:37,769 --> 00:52:41,710
+ other horribly complicated way to make big foos.
+
+817
+00:52:42,409 --> 00:52:44,190
+ So the idea is composition.
+
+818
+00:52:44,409 --> 00:52:45,190
+ That's the first idea.
+
+819
+00:52:45,409 --> 00:52:50,570
+ The second is associating a name with that composition.
+
+820
+00:52:50,849 --> 00:52:51,949
+ That's what def does.
+
+821
+00:52:51,949 --> 00:52:54,610
+ was define name, name of a subroutine.
+
+822
+00:52:55,590 --> 00:52:58,929
+ So we thought about composing operations, associating names
+
+823
+00:52:58,929 --> 00:52:59,369
+ with them.
+
+824
+00:52:59,710 --> 00:53:03,449
+ We composed data in terms of lists, and we associated names
+
+825
+00:53:03,449 --> 00:53:05,150
+ with those lists in terms of variables.
+
+826
+00:53:05,829 --> 00:53:08,789
+ The next thing we want to think about is a higher order
+
+827
+00:53:08,789 --> 00:53:13,269
+ construct where we would like to conglomerate into one data
+
+828
+00:53:13,269 --> 00:53:16,670
+ structure both data and procedures.
+
+829
+00:53:18,170 --> 00:53:21,170
+ Python has a concept called a class that
+
+830
+00:53:21,170 --> 00:53:21,949
+ that lets us do that.
+
+831
+00:53:23,090 --> 00:53:26,809
+ In Python, you make a new class by saying to the Python
+
+832
+00:53:26,809 --> 00:53:29,030
+ prompt, I want a new class called student.
+
+833
+00:53:30,750 --> 00:53:35,869
+ And then under student, there is this thing, which we will
+
+834
+00:53:35,869 --> 00:53:36,690
+ call an attribute.
+
+835
+00:53:37,710 --> 00:53:42,190
+ An attribute to a class is simply a data item associated
+
+836
+00:53:42,190 --> 00:53:43,190
+ with the class.
+
+837
+00:53:44,030 --> 00:53:51,070
+ And a method, a method is just a procedure that is associated
+
+838
+00:53:51,070 --> 00:53:51,909
+ associated with a class.
+
+839
+00:53:52,130 --> 00:53:58,409
+ So there's this single item class called student that has
+
+840
+00:53:58,409 --> 00:54:03,670
+ one piece of data, its attribute school, and one
+
+841
+00:54:05,429 --> 00:54:08,829
+ procedure, which is the method calculate final rate.
+
+842
+00:54:10,070 --> 00:54:12,329
+ So then this is the kind of data structure you might
+
+843
+00:54:12,329 --> 00:54:13,710
+ imagine that a registrar would have.
+
+844
+00:54:14,769 --> 00:54:16,789
+ It's a way to associate.
+
+845
+00:54:17,650 --> 00:54:24,969
+ So the idea here is that everybody here is a student, they all have a school, and they
+
+846
+00:54:24,969 --> 00:54:27,449
+ all have a way of calculating their final grade.
+
+847
+00:54:28,150 --> 00:54:30,510
+ That's a very narrow view that maybe a registrar would have.
+
+848
+00:54:32,949 --> 00:54:39,929
+ So classes, having defined them, we can then use the class to define an instance.
+
+849
+00:54:42,090 --> 00:54:53,369
+ So an instance is a data structure that inherits all of the structure from the class, but also
+
+850
+00:54:53,369 --> 00:54:57,929
+ provides a mechanism for having specific data associated with the instance.
+
+851
+00:54:58,690 --> 00:55:01,690
+ So in Python, I say Mary is a student.
+
+852
+00:55:02,530 --> 00:55:07,369
+ By mentioning the name of the class and putting parentheses on it, I say give me an instance
+
+853
+00:55:07,369 --> 00:55:08,110
+ of the student.
+
+854
+00:55:08,110 --> 00:55:15,710
+ So now Mary is a name associated with an instance of
+
+855
+00:55:15,710 --> 00:55:16,630
+ the class student.
+
+856
+00:55:18,030 --> 00:55:22,590
+ John is similarly an instance of the class student.
+
+857
+00:55:23,289 --> 00:55:26,750
+ So both Mary and John have schools.
+
+858
+00:55:27,110 --> 00:55:28,570
+ In fact, they're both the same.
+
+859
+00:55:28,969 --> 00:55:31,610
+ The school of Mary and the school of John are both MIT.
+
+860
+00:55:31,610 --> 00:55:41,650
+ my T. But I can extend the instance of Mary to include a
+
+861
+00:55:41,650 --> 00:55:48,030
+ new attribute, the section number, so that Mary's section
+
+862
+00:55:48,030 --> 00:55:50,510
+ number is 3 and John's section number is 4.
+
+863
+00:55:50,730 --> 00:55:53,949
+ So this provides a way, it's a higher order concept.
+
+864
+00:55:54,909 --> 00:55:57,889
+ We thought of a way to aggregate operations into
+
+865
+00:55:57,889 --> 00:56:00,489
+ complicated operations, data into complicated data.
+
+866
+00:56:00,489 --> 00:56:08,530
+ classes aggregate data and operations. Classes allow us to create a structure
+
+867
+00:56:08,530 --> 00:56:14,449
+ and then generate instances, and then the instances have access to those features
+
+868
+00:56:15,090 --> 00:56:19,210
+ that were defined in the class, but also have the ability to define their own
+
+869
+00:56:19,210 --> 00:56:27,909
+ unique attributes and methods. You can also use a class to define a subclass. So
+
+870
+00:56:27,909 --> 00:56:30,590
+ So here I'm defining the subclass student 601.
+
+871
+00:56:31,489 --> 00:56:34,690
+ All student 601s are members of the class student.
+
+872
+00:56:35,550 --> 00:56:36,630
+ The reverse is not true.
+
+873
+00:56:38,070 --> 00:56:42,909
+ So all student 601 entities inherit everything that a
+
+874
+00:56:42,909 --> 00:56:45,550
+ student has, but all 601 students
+
+875
+00:56:46,130 --> 00:56:48,010
+ share some other things.
+
+876
+00:56:48,570 --> 00:56:52,010
+ Besides having a school, which all students have, 601
+
+877
+00:56:52,010 --> 00:56:54,510
+ students also have a lecture day, a lecture time, and a
+
+878
+00:56:54,510 --> 00:56:56,090
+ method for calculating tutor scores.
+
+879
+00:56:56,090 --> 00:56:56,170
+ scores.
+
+880
+00:56:58,949 --> 00:57:03,909
+ Not all students have a way, have a method for calculating tutor scores, but members
+
+881
+00:57:04,369 --> 00:57:06,389
+ of the class student 601 do.
+
+882
+00:57:08,929 --> 00:57:17,150
+ So this, again, represents a way of organizing data and operations in a way that makes it
+
+883
+00:57:17,150 --> 00:57:21,130
+ easier to compose higher, bigger, more complex structures.
+
+884
+00:57:23,800 --> 00:57:30,860
+ The final thing that I want to talk about today is the specific gory details for how
+
+885
+00:57:30,860 --> 00:57:36,400
+ Python manages the association between names and entities.
+
+886
+00:57:37,900 --> 00:57:39,900
+ We've already seen two of those.
+
+887
+00:57:40,480 --> 00:57:46,679
+ Naming operations is via def, and it gives rise to the name of a procedure.
+
+888
+00:57:48,019 --> 00:57:50,760
+ Variables are ways of naming data structures.
+
+889
+00:57:52,039 --> 00:57:57,000
+ Now we've seen a way of naming classes.
+
+890
+00:57:57,000 --> 00:58:05,760
+ classes. And in fact, it's helpful if you understand. So Python associates names and
+
+891
+00:58:05,760 --> 00:58:10,000
+ entities in a very simple, straightforward fashion. And if you know the ground rules,
+
+892
+00:58:10,119 --> 00:58:13,000
+ it makes it very easy to deal with. And if you don't know the ground rules, it makes
+
+893
+00:58:13,000 --> 00:58:18,460
+ it very hard to deal with. So what's the ground rules? Here's the gory details. So Python
+
+894
+00:58:18,460 --> 00:58:23,199
+ Python associates names with values in what Python calls a
+
+895
+00:58:23,199 --> 00:58:24,519
+ binding environment.
+
+896
+00:58:26,530 --> 00:58:30,519
+ An environment is just a list that associates a
+
+897
+00:58:30,519 --> 00:58:31,599
+ name and an entity.
+
+898
+00:58:32,909 --> 00:58:35,820
+ So if you were to type b equals 3, what Python is
+
+899
+00:58:35,820 --> 00:58:39,360
+ actually doing is it's building this environment.
+
+900
+00:58:40,840 --> 00:58:46,639
+ When you type b equals 3, it adds to the environment a name
+
+901
+00:58:46,639 --> 00:58:52,699
+ name b and associates that name with the integer 3.
+
+902
+00:58:54,480 --> 00:59:01,460
+ When you type x equals 2.2, it adds a name x and associates
+
+903
+00:59:01,460 --> 00:59:03,460
+ it with the float, 2.2.
+
+904
+00:59:04,400 --> 00:59:09,840
+ When you say foo is minus 506 times 2, it makes the name foo
+
+905
+00:59:09,840 --> 00:59:12,860
+ and associates it with an int, minus 1012.
+
+906
+00:59:12,860 --> 00:59:22,619
+ 12, then if you ask Python about b, the rule is look it
+
+907
+00:59:22,619 --> 00:59:28,179
+ up in the environment and type the thing that b refers to.
+
+908
+00:59:28,940 --> 00:59:31,840
+ So when you type b, what Python really does is it goes
+
+909
+00:59:31,840 --> 00:59:32,400
+ to the environment.
+
+910
+00:59:32,679 --> 00:59:34,800
+ It says, do I have some entity called b?
+
+911
+00:59:35,019 --> 00:59:35,920
+ Well, yes, I do.
+
+912
+00:59:36,199 --> 00:59:38,920
+ It happens to be an int 3, so it prints 3.
+
+913
+00:59:38,920 --> 00:59:39,000
+ tree.
+
+914
+00:59:42,760 --> 00:59:48,460
+ If you ask, what is A, Python says, OK, in my environment,
+
+915
+00:59:48,619 --> 00:59:52,699
+ do I have some name A?
+
+916
+00:59:54,030 --> 00:59:56,440
+ It doesn't find it, so it prints out this cryptic
+
+917
+00:59:56,440 --> 01:00:00,699
+ message that basically says, sorry guys, I can't find
+
+918
+01:00:00,699 --> 01:00:03,760
+ something called A in the current environment.
+
+919
+01:00:05,500 --> 01:00:09,480
+ That's the key to the way Python does all name bindings.
+
+920
+01:00:11,360 --> 01:00:19,920
+ So in general, there's a global environment. You start typing to Python, it just starts adding
+
+921
+01:00:19,920 --> 01:00:26,880
+ and modifying the bindings in the binding environment. So if you type a equals three
+
+922
+01:00:26,880 --> 01:00:34,440
+ and then type a, it'll find three. If you then type b equals a plus two, it evaluates the right-hand
+
+923
+01:00:34,440 --> 01:00:38,019
+ hand side relative to the current environment.
+
+924
+01:00:39,599 --> 01:00:43,619
+ So it first looks here, and it says, do I have
+
+925
+01:00:43,619 --> 01:00:44,480
+ something called a?
+
+926
+01:00:46,500 --> 01:00:47,880
+ Yes, it's an integer 3.
+
+927
+01:00:49,139 --> 01:00:49,739
+ Substitute that.
+
+928
+01:00:50,960 --> 01:00:52,199
+ Do I know what 2 is?
+
+929
+01:00:52,360 --> 01:00:53,239
+ Oh yeah, that's just an int.
+
+930
+01:00:53,280 --> 01:00:54,059
+ Do I know what plus is?
+
+931
+01:00:54,159 --> 01:00:55,960
+ Oh yeah, that's the thing that combines two ints.
+
+932
+01:00:56,400 --> 01:01:01,099
+ So it decides that a plus 2, it evaluates a plus 2 in the
+
+933
+01:01:01,099 --> 01:01:01,639
+ current environment.
+
+934
+01:01:01,719 --> 01:01:02,239
+ It gets 5.
+
+935
+01:01:02,960 --> 01:01:08,099
+ And it says, oh, I'm trying to do a new equals, a new association, a new variable.
+
+936
+01:01:08,880 --> 01:01:15,480
+ Make the name b point to this evaluated in the current environment.
+
+937
+01:01:15,820 --> 01:01:18,760
+ So b gets associated with the int 5.
+
+938
+01:01:20,699 --> 01:01:26,340
+ Then if I do this line, it evaluates b plus 1 in the current environment.
+
+939
+01:01:29,090 --> 01:01:31,250
+ b is 5 in the current environment.
+
+940
+01:01:31,250 --> 01:01:38,869
+ environment. It adds one. It gets six. And then it says, associate this thing, six, with
+
+941
+01:01:38,869 --> 01:01:46,670
+ b. So it overwrites the b, which had been bound to five, and b is now bound to six.
+
+942
+01:01:47,929 --> 01:01:55,809
+ So the whole thing, the way it treats variables, the way Python associates a name with a value
+
+943
+01:01:55,809 --> 01:01:59,289
+ you in a variable is evaluate the right-hand side according
+
+944
+01:01:59,289 --> 01:02:02,210
+ to the current environment, then change the current
+
+945
+01:02:02,210 --> 01:02:05,190
+ environment to reflect the new binding.
+
+946
+01:02:07,110 --> 01:02:09,809
+ What it does in the case of subroutines is very similar.
+
+947
+01:02:12,639 --> 01:02:17,380
+ So here's an illustration of the local environment that is
+
+948
+01:02:17,380 --> 01:02:19,000
+ generated by this piece of code.
+
+949
+01:02:19,440 --> 01:02:22,639
+ When I say a equals 2, it generates a name in the local
+
+950
+01:02:22,639 --> 01:02:23,320
+ environment, a.
+
+951
+01:02:23,320 --> 01:02:27,400
+ a, it evaluates the right-hand side and finds 2.
+
+952
+01:02:28,420 --> 01:02:32,039
+ So it makes a binding in the local environment where the
+
+953
+01:02:32,039 --> 01:02:33,780
+ name a is associated with the integer 2.
+
+954
+01:02:36,010 --> 01:02:39,590
+ Then I say define square of x to be return x squared.
+
+955
+01:02:42,760 --> 01:02:43,960
+ That's more complicated.
+
+956
+01:02:44,800 --> 01:02:48,599
+ Python says, oh, I'm defining a new operation.
+
+957
+01:02:52,519 --> 01:02:53,519
+ It's a procedure.
+
+958
+01:02:53,519 --> 01:02:58,079
+ procedure, the procedure has a formal argument x.
+
+959
+01:03:00,039 --> 01:03:03,940
+ It has a body return x times x.
+
+960
+01:03:04,760 --> 01:03:06,940
+ I'm going to have to remember all of that stuff.
+
+961
+01:03:09,300 --> 01:03:13,360
+ So I'm trying to define a new procedure called square.
+
+962
+01:03:13,659 --> 01:03:15,559
+ It's going to make a binding for square.
+
+963
+01:03:16,980 --> 01:03:20,760
+ So in the future, if somebody says the word square, it'll
+
+964
+01:03:20,760 --> 01:03:22,860
+ find out, oh, square, I remember that one.
+
+965
+01:03:22,860 --> 01:03:25,840
+ one, square, it's a procedure.
+
+966
+01:03:28,210 --> 01:03:32,869
+ Just like the binding for a variable might be an int, the
+
+967
+01:03:32,869 --> 01:03:38,230
+ binding for a procedure is the name of the procedure.
+
+968
+01:03:39,889 --> 01:03:43,250
+ Then in the procedure, which is some other data structure
+
+969
+01:03:43,250 --> 01:03:46,989
+ outside the environment, it's got to remember the formal
+
+970
+01:03:46,989 --> 01:03:51,130
+ parameters, in this case x, and the body.
+
+971
+01:03:51,130 --> 01:03:59,869
+ body, and for the purpose of resolving what do the variables mean, it needs to remember
+
+972
+01:04:00,389 --> 01:04:05,409
+ what was the binding environment in which this subroutine was defined.
+
+973
+01:04:06,449 --> 01:04:08,469
+ So that's this arrow.
+
+974
+01:04:08,949 --> 01:04:14,510
+ So this sequence says make a new binding square, points to a procedure.
+
+975
+01:04:14,750 --> 01:04:17,329
+ The procedure has the formal argument x.
+
+976
+01:04:17,329 --> 01:04:23,929
+ x, it has the body return x times x, and it has the
+
+977
+01:04:23,929 --> 01:04:28,550
+ binding, it came from the environment e1, the current
+
+978
+01:04:28,550 --> 01:04:28,949
+ environment.
+
+979
+01:04:31,010 --> 01:04:32,489
+ OK, is everybody clear?
+
+980
+01:04:32,610 --> 01:04:35,110
+ So the idea is that the environment associates
+
+981
+01:04:35,469 --> 01:04:36,889
+ names with things.
+
+982
+01:04:37,130 --> 01:04:40,090
+ The thing could be a data item or it could be a procedure.
+
+983
+01:04:43,159 --> 01:04:48,219
+ Then when you call a procedure, it makes a new
+
+984
+01:04:48,219 --> 01:04:48,559
+ environment.
+
+985
+01:04:48,559 --> 01:04:48,619
+ environment.
+
+986
+01:04:49,940 --> 01:04:53,559
+ So what happens then when I try to evaluate a form,
+
+987
+01:04:53,800 --> 01:04:55,699
+ square of a plus 2?
+
+988
+01:04:57,860 --> 01:05:02,059
+ What Python does is it says, OK, I need to figure out what
+
+989
+01:05:02,059 --> 01:05:02,760
+ square is.
+
+990
+01:05:04,099 --> 01:05:06,860
+ So it looks it up in the environment, and it finds out
+
+991
+01:05:06,860 --> 01:05:07,880
+ that square is a procedure.
+
+992
+01:05:09,000 --> 01:05:10,960
+ Fine, I know how to deal with procedures.
+
+993
+01:05:12,320 --> 01:05:16,179
+ So then it figures out this procedure has a formal
+
+994
+01:05:16,179 --> 01:05:17,099
+ argument x.
+
+995
+01:05:17,099 --> 01:05:20,099
+ Oh, OK, if I'm going to run this procedure, I'm going to
+
+996
+01:05:20,099 --> 01:05:20,960
+ have to know what x means.
+
+997
+01:05:22,840 --> 01:05:24,800
+ So Python makes a new environment.
+
+998
+01:05:24,980 --> 01:05:26,139
+ Here it's labeled E2.
+
+999
+01:05:26,940 --> 01:05:31,159
+ Separate from the global environment, E1, it makes a
+
+1000
+01:05:31,159 --> 01:05:34,400
+ new environment that will associate x with something.
+
+1001
+01:05:35,380 --> 01:05:36,480
+ Doesn't know what it is yet.
+
+1002
+01:05:36,860 --> 01:05:40,940
+ It just knows that this square is a procedure that takes a
+
+1003
+01:05:40,940 --> 01:05:41,920
+ formal argument x.
+
+1004
+01:05:43,260 --> 01:05:46,079
+ So Python makes a new environment, E2, with x
+
+1005
+01:05:46,079 --> 01:05:50,519
+ x pointing to something, then Python evaluates the argument
+
+1006
+01:05:50,519 --> 01:05:53,119
+ a plus 2 in the environment e1.
+
+1007
+01:05:55,760 --> 01:05:59,920
+ You called square of a plus 2 in the environment e1, so it
+
+1008
+01:05:59,920 --> 01:06:03,619
+ figures out what did you mean by a plus 3.
+
+1009
+01:06:04,840 --> 01:06:08,860
+ Well, you were in the environment e1, so it means
+
+1010
+01:06:08,860 --> 01:06:13,179
+ whatever a plus 3 would have meant if he had just typed a
+
+1011
+01:06:13,179 --> 01:06:15,000
+ plus 3 in that environment.
+
+1012
+01:06:15,000 --> 01:06:19,699
+ So you evaluate a plus 3 in the environment e1, and you
+
+1013
+01:06:19,699 --> 01:06:20,099
+ get 5.
+
+1014
+01:06:22,570 --> 01:06:27,030
+ So then this new environment, e2, that is set up for this
+
+1015
+01:06:27,030 --> 01:06:30,349
+ procedure, square, associates 5 with x.
+
+1016
+01:06:32,750 --> 01:06:34,449
+ Now it's ready to run the body.
+
+1017
+01:06:35,769 --> 01:06:39,369
+ So now it runs this procedure, return x times x.
+
+1018
+01:06:40,889 --> 01:06:44,969
+ But now when it's trying to resolve its variables, it
+
+1019
+01:06:44,969 --> 01:06:46,389
+ looks it up in e2.
+
+1020
+01:06:48,570 --> 01:06:53,590
+ So he says, I want to do the procedure, the body, x times x.
+
+1021
+01:06:53,750 --> 01:06:55,869
+ I need to know what x is, and I need to know it twice.
+
+1022
+01:06:56,710 --> 01:06:57,949
+ Look up what x means.
+
+1023
+01:06:58,389 --> 01:07:01,570
+ But I will look it up in my e2 environment that was built
+
+1024
+01:07:01,570 --> 01:07:03,050
+ specifically for this procedure.
+
+1025
+01:07:03,710 --> 01:07:05,590
+ And fortunately, there's an x there.
+
+1026
+01:07:06,510 --> 01:07:08,309
+ So it finds out that x is 5.
+
+1027
+01:07:08,550 --> 01:07:10,130
+ It multiplies 5 times 5.
+
+1028
+01:07:10,289 --> 01:07:11,269
+ It gets the answer as 25.
+
+1029
+01:07:11,590 --> 01:07:12,409
+ It returns 25.
+
+1030
+01:07:13,050 --> 01:07:16,690
+ And then it destroys this environment, e2, because it
+
+1031
+01:07:16,690 --> 01:07:20,090
+ it was only necessary for the time when it was running the
+
+1032
+01:07:20,090 --> 01:07:20,789
+ procedure body.
+
+1033
+01:07:21,510 --> 01:07:22,489
+ Is that clear?
+
+1034
+01:07:28,329 --> 01:07:33,409
+ OK, so a slightly more difficult example illustrates
+
+1035
+01:07:33,409 --> 01:07:37,150
+ what happens whenever everything is not defined in
+
+1036
+01:07:37,150 --> 01:07:38,489
+ the current local environment.
+
+1037
+01:07:39,750 --> 01:07:42,170
+ What if I type define biz of a?
+
+1038
+01:07:43,690 --> 01:07:50,010
+ Well, I create a new name in the local environment that
+
+1039
+01:07:50,010 --> 01:07:50,949
+ that points to a procedure.
+
+1040
+01:07:51,469 --> 01:07:55,690
+ The procedure has a formal parameter a and a body that
+
+1041
+01:07:55,690 --> 01:07:56,670
+ returns a plus b.
+
+1042
+01:07:57,929 --> 01:08:02,170
+ The procedure also was defined within the environment e1,
+
+1043
+01:08:02,369 --> 01:08:03,909
+ which I'll keep track of.
+
+1044
+01:08:07,280 --> 01:08:11,119
+ Then if I say b equals 6, that makes a new binding in the
+
+1045
+01:08:11,119 --> 01:08:14,420
+ global environment, b equals 6.
+
+1046
+01:08:14,420 --> 01:08:22,850
+ x, then if I try to run biz of 2, look up biz.
+
+1047
+01:08:23,170 --> 01:08:23,949
+ Oh, that's a procedure.
+
+1048
+01:08:24,149 --> 01:08:27,010
+ Formal parameter a, make an environment, has an a in it.
+
+1049
+01:08:27,130 --> 01:08:27,930
+ What should I put in a?
+
+1050
+01:08:28,529 --> 01:08:29,949
+ Evaluate the argument 2.
+
+1051
+01:08:30,149 --> 01:08:31,130
+ OK, a is 2.
+
+1052
+01:08:31,250 --> 01:08:31,810
+ Put 2 here.
+
+1053
+01:08:34,220 --> 01:08:35,859
+ Now I'm ready to run the body.
+
+1054
+01:08:37,439 --> 01:08:39,500
+ Run the body in the environment e2.
+
+1055
+01:08:41,020 --> 01:08:46,720
+ When I run return a plus b in e2, I have to first figure
+
+1056
+01:08:46,720 --> 01:08:49,279
+ figure out A. Well, that's easy.
+
+1057
+01:08:49,420 --> 01:08:49,840
+ A is 2.
+
+1058
+01:08:51,619 --> 01:08:53,380
+ Then I have to figure out B. What's B?
+
+1059
+01:08:58,760 --> 01:08:59,279
+ 6.
+
+1060
+01:08:59,460 --> 01:09:00,180
+ How do you get 6?
+
+1061
+01:09:02,859 --> 01:09:07,039
+ So this local environment that was created for the formal
+
+1062
+01:09:07,039 --> 01:09:12,899
+ parameter has as its parent E1, because that's where the
+
+1063
+01:09:12,899 --> 01:09:13,920
+ procedure was defined.
+
+1064
+01:09:16,739 --> 01:09:22,819
+ So it doesn't find B in this local environment, so it goes
+
+1065
+01:09:22,819 --> 01:09:23,460
+ to the parent.
+
+1066
+01:09:23,460 --> 01:09:24,739
+ Do you have a B?
+
+1067
+01:09:26,159 --> 01:09:28,720
+ And it could, in principle, propagate up a chain of
+
+1068
+01:09:28,720 --> 01:09:29,119
+ environments.
+
+1069
+01:09:29,560 --> 01:09:31,859
+ So you could construct this hierarchically.
+
+1070
+01:09:32,039 --> 01:09:37,060
+ So it will resolve bindings in the most recent environment
+
+1071
+01:09:37,060 --> 01:09:38,180
+ that has that binding.
+
+1072
+01:09:39,500 --> 01:09:43,640
+ So the answer then is that when you run this of two,
+
+1073
+01:09:43,899 --> 01:09:49,180
+ this B gets associated with that B. OK?
+
+1074
+01:09:49,180 --> 01:09:49,260
+ OK?
+
+1075
+01:09:50,979 --> 01:09:55,800
+ So that's how the environments work for simple procedures and
+
+1076
+01:09:55,800 --> 01:09:56,640
+ simple data structures.
+
+1077
+01:09:57,699 --> 01:10:00,300
+ It's very similar for the way it works with classes.
+
+1078
+01:10:01,500 --> 01:10:05,159
+ So imagine that I had this data, and I wanted to
+
+1079
+01:10:05,159 --> 01:10:06,199
+ represent that in Python.
+
+1080
+01:10:06,840 --> 01:10:09,880
+ What I might do is look at the common features.
+
+1081
+01:10:10,159 --> 01:10:11,500
+ The courses are all the same.
+
+1082
+01:10:11,619 --> 01:10:12,640
+ The rooms are all the same.
+
+1083
+01:10:12,739 --> 01:10:13,680
+ The buildings are all the same.
+
+1084
+01:10:13,800 --> 01:10:15,039
+ The ages are highly variable.
+
+1085
+01:10:15,039 --> 01:10:22,819
+ variable. So I might want to create a class that has the common data. So I might do this.
+
+1086
+01:10:23,420 --> 01:10:33,340
+ Class staff 601. The course is 601. The building is 34. The room is this. The way Python implements
+
+1087
+01:10:33,760 --> 01:10:43,439
+ a class is as an environment. Executing this set of statements builds the class environment.
+
+1088
+01:10:43,439 --> 01:10:44,619
+ environment, this is it.
+
+1089
+01:10:45,460 --> 01:10:47,119
+ It's a list of bindings.
+
+1090
+01:10:47,600 --> 01:10:51,659
+ Here I'm binding the name course to the string 601,
+
+1091
+01:10:52,239 --> 01:10:52,800
+ et cetera.
+
+1092
+01:10:52,979 --> 01:10:55,039
+ If there were a method, I would do the same thing,
+
+1093
+01:10:55,159 --> 01:10:56,720
+ except it would look like a procedure then.
+
+1094
+01:10:59,119 --> 01:11:04,579
+ So this creates the staff 601 environment.
+
+1095
+01:11:06,239 --> 01:11:12,140
+ Staff 601, because I executed this class statement, that
+
+1096
+01:11:12,140 --> 01:11:17,199
+ that creates a binding in the local environment, staff 601,
+
+1097
+01:11:18,220 --> 01:11:20,800
+ which points to the new environment.
+
+1098
+01:11:22,439 --> 01:11:26,239
+ So now in the future, when Python encounters the name
+
+1099
+01:11:26,239 --> 01:11:30,159
+ staff 601, it will discover that that's an environment.
+
+1100
+01:11:33,359 --> 01:11:37,100
+ Python implements classes as environments.
+
+1101
+01:11:37,100 --> 01:11:37,300
+ environments.
+
+1102
+01:11:39,079 --> 01:11:46,520
+ So now, when I want to access elements within a class, I use
+
+1103
+01:11:46,520 --> 01:11:47,359
+ a special notation.
+
+1104
+01:11:47,579 --> 01:11:48,479
+ It's a dot notation.
+
+1105
+01:11:49,739 --> 01:11:55,500
+ Python regards dots as ways of navigating an environment.
+
+1106
+01:11:56,199 --> 01:12:02,159
+ When Python parses staff point room, it looks up staff 601 in
+
+1107
+01:12:02,159 --> 01:12:02,979
+ the current environment.
+
+1108
+01:12:02,979 --> 01:12:03,119
+ environment.
+
+1109
+01:12:04,220 --> 01:12:08,399
+ If it finds an environment, it then says, oh, I know about
+
+1110
+01:12:08,399 --> 01:12:09,260
+ this dot room thing.
+
+1111
+01:12:09,479 --> 01:12:16,380
+ All I do is I look up the room name in the environment staff
+
+1112
+01:12:16,380 --> 01:12:16,800
+ 601.
+
+1113
+01:12:18,399 --> 01:12:20,260
+ And when it does that, it gets the answer 501.
+
+1114
+01:12:21,340 --> 01:12:23,539
+ And the same sort of thing happens here.
+
+1115
+01:12:23,739 --> 01:12:25,260
+ It looks up staff 601.
+
+1116
+01:12:25,359 --> 01:12:26,180
+ It finds an environment.
+
+1117
+01:12:26,779 --> 01:12:27,859
+ It looks up coolness.
+
+1118
+01:12:28,000 --> 01:12:29,340
+ It finds out there is no such thing.
+
+1119
+01:12:29,460 --> 01:12:30,479
+ Well, no, that's not true.
+
+1120
+01:12:30,479 --> 01:12:30,560
+ rule.
+
+1121
+01:12:32,479 --> 01:12:35,100
+ So it creates coolness within 601
+
+1122
+01:12:37,340 --> 01:12:41,699
+ and assigns a variable and assigns an integer 11 to it.
+
+1123
+01:12:43,800 --> 01:12:49,739
+ So then the way classes, the way Python treats methods
+
+1124
+01:12:50,760 --> 01:12:52,260
+ is completely analogous.
+
+1125
+01:12:53,380 --> 01:12:55,800
+ So no, excuse me, instances.
+
+1126
+01:12:56,060 --> 01:12:57,140
+ So I'm doing instances first.
+
+1127
+01:12:57,140 --> 01:13:03,819
+ first, if I make pat be an instance of staff 601, pat is
+
+1128
+01:13:03,819 --> 01:13:07,399
+ an instance of the class staff 601.
+
+1129
+01:13:08,119 --> 01:13:12,100
+ pat is implemented as an environment.
+
+1130
+01:13:14,409 --> 01:13:19,710
+ So when I make pat, pat points to a new environment, here e3.
+
+1131
+01:13:19,989 --> 01:13:24,630
+ The parent of e3 is the class that pat belongs to, which is
+
+1132
+01:13:24,630 --> 01:13:25,289
+ here e2.
+
+1133
+01:13:25,289 --> 01:13:29,989
+ two, and when I make the instance, it's empty.
+
+1134
+01:13:30,789 --> 01:13:36,010
+ But now if I ask what is pat.course, well, pat points
+
+1135
+01:13:36,010 --> 01:13:36,789
+ to this environment.
+
+1136
+01:13:36,989 --> 01:13:38,630
+ Does this environment have something called a course?
+
+1137
+01:13:38,890 --> 01:13:39,310
+ No.
+
+1138
+01:13:39,630 --> 01:13:40,550
+ Does the parent?
+
+1139
+01:13:40,710 --> 01:13:40,970
+ Yes.
+
+1140
+01:13:43,329 --> 01:13:47,289
+ Course is bound to the string 601, so pat.course is 601,
+
+1141
+01:13:48,369 --> 01:13:52,189
+ just the same as staff601.course had been 601.
+
+1142
+01:13:53,210 --> 01:13:56,010
+ pat is an instance.
+
+1143
+01:13:56,010 --> 01:13:59,770
+ instance, it's a new environment with the class
+
+1144
+01:14:00,340 --> 01:14:02,369
+ environment as its parent.
+
+1145
+01:14:06,529 --> 01:14:13,859
+ You can add attributes to instances, and all that does
+
+1146
+01:14:13,859 --> 01:14:18,520
+ is populate the environment associated with the instance.
+
+1147
+01:14:20,939 --> 01:14:27,180
+ You can add methods to classes, and that does the
+
+1148
+01:14:27,180 --> 01:14:27,739
+ same thing.
+
+1149
+01:14:27,739 --> 01:14:32,140
+ So here I've got the class staff 601, which has a method
+
+1150
+01:14:32,140 --> 01:14:35,279
+ salutation and instance variables,
+
+1151
+01:14:35,520 --> 01:14:36,539
+ course building in room.
+
+1152
+01:14:38,039 --> 01:14:41,699
+ So when I build that structure, staff 601 points to
+
+1153
+01:14:42,119 --> 01:14:45,460
+ an environment that contains salutation, which is a
+
+1154
+01:14:45,460 --> 01:14:50,319
+ procedure in addition to a bunch of instance variables.
+
+1155
+01:14:53,569 --> 01:14:56,310
+ So now all the rules that we've talked about with regard
+
+1156
+01:14:56,310 --> 01:14:58,909
+ regard to environments apply now to this class.
+
+1157
+01:15:00,750 --> 01:15:05,350
+ So in particular, I can say staff 601 salutation of pat.
+
+1158
+01:15:07,710 --> 01:15:12,510
+ When Python parses staff 601, it finds an environment.
+
+1159
+01:15:15,449 --> 01:15:16,770
+ It says dot salutation.
+
+1160
+01:15:16,970 --> 01:15:17,750
+ Oh, I know how to do that.
+
+1161
+01:15:18,130 --> 01:15:25,529
+ Within the environment staff 601, look for a binding for
+
+1162
+01:15:25,529 --> 01:15:27,510
+ the name salutation.
+
+1163
+01:15:27,510 --> 01:15:29,569
+ salutation, do I find one?
+
+1164
+01:15:29,750 --> 01:15:30,510
+ Well, yeah, there it is.
+
+1165
+01:15:30,729 --> 01:15:32,149
+ It points to a procedure.
+
+1166
+01:15:32,390 --> 01:15:34,949
+ So staff.salutation is a procedure.
+
+1167
+01:15:35,210 --> 01:15:38,590
+ Do just the same things that we would have done with a
+
+1168
+01:15:38,590 --> 01:15:39,289
+ simple procedure.
+
+1169
+01:15:39,470 --> 01:15:41,529
+ The only difference here is that the procedure
+
+1170
+01:15:41,529 --> 01:15:42,489
+ came from a class.
+
+1171
+01:15:44,859 --> 01:15:54,109
+ In this particular case, the subroutine that I define has a
+
+1172
+01:15:54,109 --> 01:15:55,310
+ formal parameter self.
+
+1173
+01:15:57,520 --> 01:16:01,000
+ So then that's going to have to build, when I try to
+
+1174
+01:16:01,000 --> 01:16:07,479
+ to evaluate it, that has to build a binding for self,
+
+1175
+01:16:08,449 --> 01:16:09,739
+ which is set to pat.
+
+1176
+01:16:10,369 --> 01:16:12,100
+ Pat was an environment.
+
+1177
+01:16:12,399 --> 01:16:14,420
+ So self gets pointed to pat.
+
+1178
+01:16:15,970 --> 01:16:21,539
+ So now when I run staff.601 salutation on pat, it behaves
+
+1179
+01:16:21,539 --> 01:16:24,720
+ as though that generic method was applied
+
+1180
+01:16:24,720 --> 01:16:26,159
+ to the instance pat.
+
+1181
+01:16:29,170 --> 01:16:30,239
+ We'll do that a lot.
+
+1182
+01:16:30,420 --> 01:16:32,300
+ It's a little bit of redundancy.
+
+1183
+01:16:32,300 --> 01:16:35,840
+ see, we know that pat is a member of staff 601.
+
+1184
+01:16:37,960 --> 01:16:40,840
+ So we will define a special form, or I should say Python
+
+1185
+01:16:40,840 --> 01:16:43,140
+ defines a special form that makes that easy to say.
+
+1186
+01:16:44,640 --> 01:16:48,880
+ This is the way we will usually say the instance pat
+
+1187
+01:16:48,880 --> 01:16:55,380
+ should run the class method salutation on itself.
+
+1188
+01:16:56,659 --> 01:16:59,640
+ This is simply a simplified notation that
+
+1189
+01:16:59,640 --> 01:17:00,800
+ means precisely that.
+
+1190
+01:17:00,800 --> 01:17:00,880
+ that.
+
+1191
+01:17:05,329 --> 01:17:05,649
+ OK.
+
+1192
+01:17:06,170 --> 01:17:10,909
+ So what we covered today, then, was supposed to be the
+
+1193
+01:17:10,909 --> 01:17:15,189
+ most elementary ideas in how you construct modular
+
+1194
+01:17:15,189 --> 01:17:18,810
+ programs, modularity at the small scale.
+
+1195
+01:17:20,350 --> 01:17:23,949
+ How do you make operations that are hierarchical, data
+
+1196
+01:17:23,949 --> 01:17:25,430
+ structures, and classes?
+
+1197
+01:17:25,890 --> 01:17:29,909
+ What we will do for the rest of the week is practice those
+
+1198
+01:17:29,909 --> 01:17:30,329
+ activities.
+

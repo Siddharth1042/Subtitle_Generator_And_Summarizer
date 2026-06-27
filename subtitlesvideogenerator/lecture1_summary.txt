@@ -1,0 +1,5 @@
+BART SUMMARY:
+Danny Freeman: 6.01 is mostly about modes of reasoning. We want to talk about how do you design and build complicated systems? That's what engineers do. We're very good at it, and you know that from your common  everyday experience.
+
+FLAN SUMMARY:
+Donate to MIT OpenCourseWare.

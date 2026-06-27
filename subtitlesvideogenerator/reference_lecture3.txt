@@ -1,0 +1,7 @@
+This lecture introduces computational models and their applications in understanding real-world problems. The instructor explains optimization, statistical modeling, and simulation as important tools in data science and engineering.
+
+A major focus of the lecture is the knapsack optimization problem. The instructor discusses objective functions, constraints, brute-force solutions, and greedy algorithms. Students learn how optimization problems can be represented mathematically and solved computationally.
+
+The lecture demonstrates how different greedy strategies can produce different results and explains the distinction between local and global optima. Examples involving food selection and resource allocation are used to illustrate these concepts.
+
+The lecture concludes by emphasizing the importance of algorithm design and computational modeling for making predictions and solving complex real-world problems.

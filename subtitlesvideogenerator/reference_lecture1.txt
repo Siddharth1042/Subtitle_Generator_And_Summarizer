@@ -1,0 +1,9 @@
+This lecture introduces the goals and structure of the course. The instructor explains that the course focuses on engineering reasoning, abstraction, modularity, and system design. The course is organized around four modules: software engineering, signals and systems, circuits, and probability and planning.
+
+Students participate in lectures, software labs, design labs, readings, quizzes, and projects. The teaching philosophy is based on "practice, theory, practice," emphasizing learning through hands-on experience.
+
+The lecture introduces important programming concepts in Python, including composition, abstraction, functions, lists, classes, methods, and variables. The instructor explains how complex operations can be built from simpler operations and how data structures can be organized hierarchically.
+
+The lecture also discusses classes, instances, inheritance, and the Python environment model. Students learn how names are associated with values, how functions create local environments, and how Python resolves variable bindings.
+
+The overall goal is to help students develop systematic approaches to designing and understanding complex engineering systems.

@@ -1,0 +1,5 @@
+BART SUMMARY:
+John Guttag: Welcome to 6-triple-0-2,  or if you were in 600, the second half of 600. Prerequisites: experience writing object-oriented programs in Python, preferably Python 3.5.
+
+FLAN SUMMARY:
+MIT OpenCourseWare is donating a portion of this material to the MIT OpenCourseWare Foundation.
